@@ -123,9 +123,10 @@ function initVisitorCounter() {
   if (!visitorCountEl) return;
 
   let count = localStorage.getItem('portfolio_visitors');
-  if (!count) {
-    // Generate a random seed count for the simulation
-    count = Math.floor(Math.random() * 500) + 12400;
+  // Reset if not set, or if it has the old high seed (>1000)
+  if (!count || parseInt(count, 10) > 1000) {
+    // Generate a smaller seed count for the simulation
+    count = Math.floor(Math.random() * 40) + 120;
   } else {
     count = parseInt(count, 10);
   }
