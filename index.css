@@ -644,3 +644,43 @@ svg.logo-svg {
   height: 18px;
   fill: currentColor;
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-light);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Custom Scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-light) transparent;
+}
+
+/* Project Card Hover Upgrade */
+.project-card {
+  padding: 12px;
+  margin: -12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+  background-color: var(--muted-light);
+  border-color: var(--border);
+  transform: translateY(-2px);
+}

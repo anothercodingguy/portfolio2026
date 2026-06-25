@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initVisitorCounter();
   initScrollSpy();
+  initClock();
 });
 
 /**
@@ -190,4 +191,45 @@ function initScrollSpy() {
       });
     }
   });
+}
+
+/**
+ * Live Indian Standard Time (IST) Clock
+ */
+function initClock() {
+  const timeEl = document.getElementById('local-time');
+  if (!timeEl) return;
+
+  const updateClock = () => {
+    const options = {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+    
+    try {
+      const formatter = new Intl.DateTimeFormat('en-US', options);
+      const parts = formatter.formatToParts(new Date());
+      
+      let hour = '', minute = '', second = '', dayPeriod = '';
+      for (const part of parts) {
+        if (part.type === 'hour') hour = part.value;
+        else if (part.type === 'minute') minute = part.value;
+        else if (part.type === 'second') second = part.value;
+        else if (part.type === 'dayPeriod') dayPeriod = part.value.toUpperCase();
+      }
+      
+      timeEl.textContent = `${hour}:${minute}:${second} ${dayPeriod}`;
+    } catch (e) {
+      // Fallback in case Intl is not fully supported
+      const now = new Date();
+      timeEl.textContent = now.toLocaleTimeString();
+    }
+  };
+
+  // Run immediately and then update every second
+  updateClock();
+  setInterval(updateClock, 1000);
 }
