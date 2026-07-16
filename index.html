@@ -6,7 +6,6 @@
   <title>Suyash Singh | AI Researcher & Software Engineer</title>
   <meta name="description" content="Portfolio of Suyash Singh, Computer Science student, AI researcher, and builder of scalable backend systems.">
   
-  <!-- SEO & Open Graph -->
   <meta property="og:title" content="Suyash Singh | AI Researcher & Software Engineer">
   <meta property="og:description" content="AI Researcher (ICDDS 2025) and builder of production-grade distributed systems and LLM gateways.">
   <meta property="og:type" content="website">
@@ -17,284 +16,281 @@
 </head>
 <body>
 
-  <!-- Background Grid Pattern -->
-  <div class="bg-grid"></div>
-
-  <!-- Top Backdrop Blur Mask -->
-  <div class="top-blur-mask"></div>
-
-  <!-- Main Container -->
-  <div class="container animate-fade-in">
-    
-    <!-- HEADER / INTRO -->
-    <header id="intro">
-      <div class="intro-header">
-        <!-- Profile Avatar (falls back to a sleek SVG avatar if avatar.png is missing) -->
-        <img src="avatar.png" alt="Suyash Singh" class="avatar" onerror="this.style.display='none'; document.getElementById('svg-avatar').style.display='flex';">
-        <div id="svg-avatar" class="avatar" style="display:none; align-items:center; justify-content:center; background: linear-gradient(135deg, #2563eb, #7c3aed); color: white; font-weight:600; font-family:var(--font-sans);">
-          SS
-        </div>
-        
-        <div class="name-block">
-          <div class="name-row">
-            <h1>Suyash Singh</h1>
-            <!-- Verified Icon -->
-            <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="m23 12-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
-            </svg>
-          </div>
-          <div class="font-mono text-muted">AI Researcher & Software Engineer</div>
-        </div>
+  <!-- Top Fixed Navigation -->
+  <nav class="top-nav">
+    <div class="nav-inner border-x-dashed border-b-dashed">
+      <div class="nav-logo">
+        <a href="#intro" class="font-serif nav-title">Suyash</a>
       </div>
-
-      <div class="intro-bio font-mono text-muted" style="font-size: 0.85rem; line-height: 1.7;">
-        <p>
-          I'm a Computer Science Engineering student and published AI researcher based in Bengaluru, India, building production-grade <span class="text-serif-italic" style="font-size: 1.1rem; color: var(--foreground);">AI systems</span>, LLM pipelines, and highly scalable backend infrastructure.
-        </p>
-        <p>
-          Reach me via 
-          <a href="mailto:suyashs787@gmail.com" class="interactive-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>email
-          </a> 
-          or connect on 
-          <a href="https://www.linkedin.com/in/suyashin/" target="_blank" rel="noopener noreferrer" class="interactive-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
-          </a>, 
-          explore my code on 
-          <a href="https://github.com/anothercodingguy" target="_blank" rel="noopener noreferrer" class="interactive-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>GitHub
-          </a>.
-        </p>
+      <div class="nav-links font-sans">
+        <a href="#intro" class="nav-link active"><span>Home</span></a>
+        <a href="#projects" class="nav-link"><span>Projects</span></a>
+        <a href="#writing" class="nav-link"><span>Writing</span></a>
       </div>
-    </header>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience">
-      <h2><span class="section-hash">#</span> experience</h2>
-      <p class="font-mono text-muted" style="font-size: 0.8rem; margin-bottom: 16px;">Places I've shipped real things.</p>
-      
-      <div class="accordion">
-        
-        <!-- Experience Item 1 -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <div class="accordion-title-container">
-              <div class="company-logo" style="background: transparent;">
-                <img src="stealth.png" alt="Stealth Startup" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, #1e293b, #0f172a); color: #f8fafc; font-weight: 600; border-radius: 8px;">SS</div>
-              </div>
-              <div class="job-meta">
-                <div class="company-name">
-                  Stealth Startup
-                  <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-                <div class="job-title">AI Intern</div>
-              </div>
-            </div>
-            <div class="job-date font-mono">dec 2025 - may 2026</div>
-          </button>
-          
-          <div class="accordion-content">
-            <div class="experience-list font-mono" style="font-size: 0.8rem; line-height: 1.6;">
-              <div class="experience-bullet">Built backend systems for an LLM-powered conversational AI platform using Mistral with memory-augmented agentic workflows and multi-turn dialogue.</div>
-              <div class="experience-bullet">Integrated NLP-based entity and intent extraction to capture structured data from unstructured user inputs.</div>
-              <div class="experience-bullet">Designed REST APIs and AWS-based inference services handling conversation state, routing, and session management at scale.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experience Item 2 -->
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <div class="accordion-title-container">
-              <div class="company-logo" style="background: transparent;">
-                <img src="ieee.png" alt="IEEE Computer Society" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, #0284c7, #0369a1); color: white; font-weight: 600; border-radius: 8px;">CS</div>
-              </div>
-              <div class="job-meta">
-                <div class="company-name">
-                  IEEE Computer Society
-                  <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </div>
-                <div class="job-title">R&D Intern — Bangalore Chapter</div>
-              </div>
-            </div>
-            <div class="job-date font-mono">apr 2025 - sep 2025</div>
-          </button>
-          
-          <div class="accordion-content">
-            <div class="experience-list font-mono" style="font-size: 0.8rem; line-height: 1.6;">
-              <div class="experience-bullet">Authored technical workshop documentation on AI and systems topics, materials used across sessions attended by 100+ students across multiple cohorts.</div>
-              <div class="experience-bullet">Distilled recent research papers into structured, beginner-accessible write-ups used as official workshop references and onboarding material.</div>
-            </div>
-          </div>
-        </div>
-
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </button>
       </div>
-    </section>
-
-    <!-- SELECTED WORK SECTION -->
-    <section id="projects">
-      <h2><span class="section-hash">#</span> selected work</h2>
-      <p class="font-mono text-muted" style="font-size: 0.8rem; margin-bottom: 20px;">Things I've shipped, and ones I'm shipping.</p>
-      
-      <div class="projects-grid font-mono">
-        
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-title-row">
-            <span class="project-title">Semantic LLM Gateway</span>
-          </div>
-          <p class="project-desc">API proxy acting as an intelligent cache & cost-aware router for LLMs with semantically stored hits (<50ms caching).</p>
-          <div class="project-links">
-            <a href="https://github.com/anothercodingguy" target="_blank" rel="noopener noreferrer" class="interactive-link" style="font-size:0.75rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>github
-            </a>
-            <a href="https://llm-gateway-backend-dfo8.onrender.com/" target="_blank" rel="noopener noreferrer" class="interactive-link" style="font-size:0.75rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>live
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-title-row">
-            <span class="project-title">The Watcher (AIOps)</span>
-          </div>
-          <p class="project-desc">Auto-remediation system running anomaly detection models at the edge for Kubernetes microservices (handles 5k+ RPS).</p>
-          <div class="project-links">
-            <a href="https://github.com/anothercodingguy" target="_blank" rel="noopener noreferrer" class="interactive-link" style="font-size:0.75rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>github
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <div class="project-title-row">
-            <span class="project-title">SENNs (Unlearning)</span>
-            <span class="project-badge"><span class="badge-dot"></span>ICDDS 2025</span>
-          </div>
-          <p class="project-desc">GDPR-compliant machine unlearning frameworks designed to erase neural network data without full retraining.</p>
-          <div class="project-links">
-            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="interactive-link" style="font-size:0.75rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>paper
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WRITING / RESEARCH SECTION -->
-    <section id="writing">
-      <h2><span class="section-hash">#</span> writing</h2>
-      <p class="font-mono text-muted" style="font-size: 0.8rem; margin-bottom: 16px;">Notes on building, shipping, and learning in public.</p>
-      
-      <div class="writing-list">
-        <!-- Paper Link -->
-        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="writing-card">
-          <div class="writing-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-          </div>
-          <div class="writing-info">
-            <span class="writing-title font-mono">Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning</span>
-            <span class="writing-date font-mono">Published in ICDDS 2025</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- QUICK CALL / CTA SECTION -->
-    <section class="cta-container">
-      <div class="ask-ai-section">
-        <div class="flex flex-col mb-4">
-          <h2><span class="section-hash">#</span> quick call?</h2>
-          <p class="font-mono text-muted" style="font-size: 0.8rem; margin-top: 4px; margin-bottom: 12px;">Got a research idea, a role, or just want to talk AI gateways? Grab a slot.</p>
-        </div>
-        <a href="https://cal.com/suyashh" target="_blank" rel="noopener noreferrer" class="cta-button font-mono" style="font-size: 0.8rem; width: fit-content;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-          Book a call
-          <svg class="cta-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" x2="17" y1="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ASK AI FLOATING BAR -->
-    <section class="ask-ai-section">
-      <div class="ask-ai-row" style="border-top: 1px solid var(--border); padding-top: 24px;">
-        <span class="ask-ai-label font-mono"># ask why Suyash might matter? on any platform</span>
-        <div class="ask-ai-buttons">
-          <!-- ChatGPT -->
-          <a href="https://chatgpt.com/?q=Why%20Suyash%20might%20matter%3F%20(https%3A%2F%2Fsuyashportfolio-virid.vercel.app%2F)" target="_blank" rel="noopener noreferrer" class="ai-btn" aria-label="Ask ChatGPT about Suyash" title="ChatGPT">
-            <svg class="logo-svg" viewBox="0 0 24 24">
-              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
-            </svg>
-          </a>
-          <!-- Claude -->
-          <a href="https://claude.ai/new?q=Why%20Suyash%20might%20matter%3F%20(https%3A%2F%2Fsuyashportfolio-virid.vercel.app%2F)" target="_blank" rel="noopener noreferrer" class="ai-btn" aria-label="Ask Claude about Suyash" title="Claude">
-            <svg class="logo-svg" viewBox="0 0 24 24">
-              <path d="M4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/>
-            </svg>
-          </a>
-          <!-- Gemini -->
-          <a href="https://gemini.google.com/app?q=Why%20Suyash%20might%20matter%3F%20(https%3A%2F%2Fsuyashportfolio-virid.vercel.app%2F)" target="_blank" rel="noopener noreferrer" class="ai-btn" aria-label="Ask Gemini about Suyash" title="Gemini">
-            <svg class="logo-svg" viewBox="0 0 24 24">
-              <path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/>
-            </svg>
-          </a>
-          <!-- Perplexity -->
-          <a href="https://www.perplexity.ai/search?q=Why%20Suyash%20might%20matter%3F%20(https%3A%2F%2Fsuyashportfolio-virid.vercel.app%2F)" target="_blank" rel="noopener noreferrer" class="ai-btn" aria-label="Ask Perplexity about Suyash" title="Perplexity">
-            <svg class="logo-svg" viewBox="0 0 24 24">
-              <path d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-row font-mono">
-        <div class="footer-left">
-          <p>Designed & Developed by <span class="footer-highlight">Suyash Singh</span></p>
-          <p>© 2026 All rights reserved.</p>
-        </div>
-        <div class="footer-right">
-          <p>Visitors: <span id="visitor-count" class="footer-highlight">...</span></p>
-          <p>Bengaluru, India <span id="local-time" class="footer-highlight" style="margin-left: 6px;">...</span></p>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- FLOATING NAVIGATION DOCK -->
-  <div class="floating-dock-container">
-    <div class="floating-dock">
-      <!-- Section Links -->
-      <button class="dock-item dock-nav-item active" data-target="intro" title="Home">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </button>
-      <button class="dock-item dock-nav-item" data-target="experience" title="Experience">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      </button>
-      <button class="dock-item dock-nav-item" data-target="projects" title="Projects">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </button>
-      <button class="dock-item dock-nav-item" data-target="writing" title="Writing">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      </button>
-      
-      <div class="dock-divider"></div>
-      
-      <!-- Theme Switcher -->
-      <button id="theme-toggle" class="dock-item theme-toggle-btn" title="Toggle Theme">
-        <!-- Will be populated dynamically by JS with Sun or Moon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-      </button>
     </div>
-  </div>
+  </nav>
+
+  <!-- Main layout container with dashed borders -->
+  <div class="layout-wrapper">
+    <div class="layout-container border-x-dashed">
+      
+      <!-- HERO -->
+      <header id="intro" class="section-block">
+        <div class="banner-wrapper">
+          <div class="banner-bg"></div>
+        </div>
+        
+        <div class="profile-header">
+          <div class="avatar-wrapper">
+            <img src="avatar.png" alt="Suyash Singh" class="avatar" onerror="this.style.display='none'; document.getElementById('svg-avatar').style.display='flex';">
+            <div id="svg-avatar" class="avatar-fallback" style="display:none;">SS</div>
+          </div>
+          
+          <div class="profile-info">
+            <div class="name-row">
+              <h1 class="font-serif text-shadow">Suyash Singh</h1>
+              <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="m23 12-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+              </svg>
+            </div>
+            <div class="title-animation-wrapper">
+               <span class="font-mono text-muted animated-title">AI Researcher & Software Engineer.</span>
+            </div>
+            <p class="font-mono text-muted location-text">Bengaluru, IND</p>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="about-section">
+          <h2 class="section-title font-serif">About</h2>
+          <div class="about-content">
+            <div class="about-item">
+              <span class="bullet text-muted">•</span>
+              <p>I'm a Computer Science Engineering student and published AI researcher based in Bengaluru, India, building production-grade <span class="text-serif-italic highlight-text">AI systems</span>, LLM pipelines, and highly scalable backend infrastructure.</p>
+            </div>
+            <div class="about-item">
+              <span class="bullet text-muted">•</span>
+              <p>I focus on memory-augmented agentic workflows, machine unlearning frameworks (GDPR compliance), and high-performance Rust/Go backends.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CONTACT GRID -->
+        <div class="contact-section">
+          <h2 class="section-title font-serif">Contact</h2>
+          <div class="contact-grid">
+            <a href="https://github.com/anothercodingguy" target="_blank" class="contact-card border-dashed group">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+              </div>
+              <span class="contact-name">GitHub</span>
+              <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/suyashin/" target="_blank" class="contact-card border-dashed group">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <span class="contact-name">LinkedIn</span>
+              <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="mailto:suyashs787@gmail.com" class="contact-card border-dashed group">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <span class="contact-name">Mail</span>
+              <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://cal.com/suyashh" target="_blank" class="contact-card border-dashed group">
+              <div class="contact-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <span class="contact-name">Call</span>
+              <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section-block border-t-dashed">
+        <h2 class="section-title font-serif">Experience</h2>
+        <div class="accordion">
+          <!-- Experience Item 1 -->
+          <div class="accordion-item border-dashed">
+            <button class="accordion-header" aria-expanded="false">
+              <div class="accordion-title-container">
+                <div class="company-logo">
+                  <img src="stealth.png" alt="Stealth Startup" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="company-fallback" style="display: none; background: linear-gradient(135deg, #1e293b, #0f172a);">SS</div>
+                </div>
+                <div class="job-meta">
+                  <div class="company-name">Stealth Startup <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                  <div class="job-title font-mono text-muted">AI Intern</div>
+                </div>
+              </div>
+              <div class="job-date font-mono text-muted">dec 2025 - may 2026</div>
+            </button>
+            <div class="accordion-content">
+              <div class="experience-list font-mono">
+                <div class="experience-bullet">Built backend systems for an LLM-powered conversational AI platform using Mistral with memory-augmented agentic workflows.</div>
+                <div class="experience-bullet">Integrated NLP-based entity and intent extraction to capture structured data from unstructured user inputs.</div>
+                <div class="experience-bullet">Designed REST APIs and AWS-based inference services handling conversation state and session management at scale.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Experience Item 2 -->
+          <div class="accordion-item border-dashed mt-3">
+            <button class="accordion-header" aria-expanded="false">
+              <div class="accordion-title-container">
+                <div class="company-logo">
+                  <img src="ieee.png" alt="IEEE Computer Society" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="company-fallback" style="display: none; background: linear-gradient(135deg, #0284c7, #0369a1);">CS</div>
+                </div>
+                <div class="job-meta">
+                  <div class="company-name">IEEE Computer Society <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                  <div class="job-title font-mono text-muted">R&D Intern</div>
+                </div>
+              </div>
+              <div class="job-date font-mono text-muted">apr 2025 - sep 2025</div>
+            </button>
+            <div class="accordion-content">
+              <div class="experience-list font-mono">
+                <div class="experience-bullet">Authored technical workshop documentation on AI and systems topics for 100+ students.</div>
+                <div class="experience-bullet">Distilled recent research papers into structured, beginner-accessible write-ups.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section-block border-t-dashed">
+        <div class="section-header">
+          <h2 class="section-title font-serif">Projects</h2>
+          <a href="https://github.com/anothercodingguy" target="_blank" class="view-all-link font-mono text-muted group">
+            <span class="group-hover:text-foreground transition-colors">View all</span> <svg class="group-hover:text-foreground transition-colors" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card border-dashed">
+            <a href="https://github.com/anothercodingguy" target="_blank" class="project-banner-link">
+              <div class="project-banner bg-gradient-1">
+                <div class="project-banner-overlay">
+                  <span class="banner-tag">Live</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-details">
+              <div class="project-title-row">
+                <h3 class="project-title font-sans">Semantic LLM Gateway</h3>
+              </div>
+              <p class="project-desc font-mono text-muted">API proxy acting as an intelligent cache & cost-aware router for LLMs with semantically stored hits (<50ms caching).</p>
+              <div class="project-footer">
+                <div class="tech-stack-tags font-mono">
+                  <span class="tech-tag border-dashed">Rust</span>
+                  <span class="tech-tag border-dashed">Redis</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://llm-gateway-backend-dfo8.onrender.com/" target="_blank" class="icon-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+                  <a href="https://github.com/anothercodingguy" target="_blank" class="icon-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card border-dashed">
+            <a href="https://github.com/anothercodingguy" target="_blank" class="project-banner-link">
+              <div class="project-banner bg-gradient-2">
+              </div>
+            </a>
+            <div class="project-details">
+              <div class="project-title-row">
+                <h3 class="project-title font-sans">The Watcher (AIOps)</h3>
+              </div>
+              <p class="project-desc font-mono text-muted">Auto-remediation system running anomaly detection models at the edge for Kubernetes microservices (handles 5k+ RPS).</p>
+              <div class="project-footer">
+                <div class="tech-stack-tags font-mono">
+                  <span class="tech-tag border-dashed">Go</span>
+                  <span class="tech-tag border-dashed">K8s</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/anothercodingguy" target="_blank" class="icon-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card border-dashed">
+            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" class="project-banner-link">
+              <div class="project-banner bg-gradient-3">
+                <div class="project-banner-overlay">
+                  <span class="banner-tag">Paper</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-details">
+              <div class="project-title-row">
+                <h3 class="project-title font-sans">SENNs (Unlearning)</h3>
+                <span class="project-badge font-mono border-dashed"><span class="badge-dot"></span>ICDDS 2025</span>
+              </div>
+              <p class="project-desc font-mono text-muted">GDPR-compliant machine unlearning frameworks designed to erase neural network data without full retraining.</p>
+              <div class="project-footer">
+                <div class="tech-stack-tags font-mono">
+                  <span class="tech-tag border-dashed">PyTorch</span>
+                  <span class="tech-tag border-dashed">Python</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" class="icon-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WRITING / RESEARCH -->
+      <section id="writing" class="section-block border-t-dashed">
+        <h2 class="section-title font-serif">Writing</h2>
+        <div class="writing-list">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" class="writing-card border-dashed group">
+            <div class="writing-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+            </div>
+            <div class="writing-info">
+              <span class="writing-title font-sans font-semibold">Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning</span>
+              <span class="writing-date font-mono text-muted">Published in ICDDS 2025</span>
+            </div>
+            <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t-dashed">
+        <div class="footer-row font-mono text-muted">
+          <div class="footer-left">
+            <p>Designed & Developed by <span class="footer-highlight">Suyash Singh</span></p>
+          </div>
+          <div class="footer-right">
+            <p>Bengaluru, India <span id="local-time" class="footer-highlight" style="margin-left: 6px;">...</span></p>
+          </div>
+        </div>
+      </footer>
+
+    </div> <!-- End layout-container -->
+  </div> <!-- End layout-wrapper -->
 
   <script src="index.js"></script>
 </body>
