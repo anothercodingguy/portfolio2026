@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initScrollSpy();
   initClock();
+  initMobileMenu();
 });
 
 /**
@@ -191,4 +192,36 @@ function initClock() {
 
   updateClock();
   setInterval(updateClock, 1000);
+}
+
+/**
+ * Mobile Hamburger Menu Toggle
+ */
+function initMobileMenu() {
+  const btn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (!btn || !mobileNav) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen.toString());
+  });
+
+  // Close menu when a mobile link is clicked
+  mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileNav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = targetSection.getBoundingClientRect().top;
+        const offsetPosition = (elementRect - bodyRect) - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    });
+  });
 }
