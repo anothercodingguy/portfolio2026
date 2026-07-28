@@ -151,6 +151,14 @@ function initScrollSpy() {
           link.classList.add('active');
         }
       });
+      
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileNavLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === currentActive) {
+          link.classList.add('active');
+        }
+      });
     }
   });
 }
