@@ -711,6 +711,10 @@ body::before {
   background: linear-gradient(135deg, #f43f5e, #fb923c);
 }
 
+.bg-gradient-4 {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1, #8b5cf6);
+}
+
 .project-banner-overlay {
   position: absolute;
   top: 12px;
