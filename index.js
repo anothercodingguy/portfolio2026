@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initClock();
   initMobileMenu();
+  initVisitorCounter();
 });
 
 /**
@@ -113,8 +114,11 @@ function initScrollSpy() {
 
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return; // Allow normal opening for resume.pdf or external links
+
       e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
+      const targetId = href.substring(1);
       const targetSection = document.getElementById(targetId);
       
       if (targetSection) {
@@ -146,17 +150,23 @@ function initScrollSpy() {
 
     if (currentActive) {
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentActive) {
-          link.classList.add('active');
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          link.classList.remove('active');
+          if (href === `#${currentActive}`) {
+            link.classList.add('active');
+          }
         }
       });
       
       const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
       mobileNavLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentActive) {
-          link.classList.add('active');
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          link.classList.remove('active');
+          if (href === `#${currentActive}`) {
+            link.classList.add('active');
+          }
         }
       });
     }
@@ -218,18 +228,84 @@ function initMobileMenu() {
   // Close menu when a mobile link is clicked
   mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
+      const href = link.getAttribute('href');
       mobileNav.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        const offset = 80;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = targetSection.getBoundingClientRect().top;
-        const offsetPosition = (elementRect - bodyRect) - offset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = targetSection.getBoundingClientRect().top;
+          const offsetPosition = (elementRect - bodyRect) - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
       }
     });
   });
 }
+
+/**
+ * Real-Time Visitor Counter
+ */
+function initVisitorCounter() {
+  const counterEl = document.getElementById('visitor-count');
+  if (!counterEl) return;
+
+  const cached = localStorage.getItem('cached_visitor_count');
+  let startValue = 0;
+  if (cached) {
+    startValue = parseInt(cached, 10) || 0;
+    counterEl.textContent = startValue.toLocaleString();
+  }
+
+  // Deduplicate counts per session so page reloads don't artificially spike numbers
+  const hasVisited = sessionStorage.getItem('portfolio_session_visited');
+  const action = hasVisited ? 'view' : 'up';
+  const url = `https://counterapi.com/api/suyash-singh-portfolio/${action}/visits`;
+
+  fetch(url)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      if (data && typeof data.value === 'number') {
+        sessionStorage.setItem('portfolio_session_visited', 'true');
+        localStorage.setItem('cached_visitor_count', data.value.toString());
+        animateCount(counterEl, startValue, data.value);
+      }
+    })
+    .catch(err => {
+      console.warn('Could not fetch real-time visitor count:', err);
+      if (!cached) {
+        counterEl.textContent = '1';
+      }
+    });
+}
+
+function animateCount(element, start, end, duration = 800) {
+  if (start === end) {
+    element.textContent = end.toLocaleString();
+    return;
+  }
+  const startTime = performance.now();
+  const step = (now) => {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(start + (end - start) * easeOut);
+    element.textContent = current.toLocaleString();
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      element.textContent = end.toLocaleString();
+    }
+  };
+  requestAnimationFrame(step);
+}
+

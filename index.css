@@ -443,13 +443,7 @@ body::before {
 
 @media (min-width: 600px) {
   .contact-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 800px) {
-  .contact-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -903,6 +897,57 @@ footer {
 .footer-highlight {
   color: var(--foreground);
   font-weight: 500;
+}
+
+/* Visitor Counter */
+.visitor-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  margin-top: 4px;
+  width: fit-content;
+  user-select: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.visitor-counter-badge:hover {
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+
+.visitor-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+.visitor-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.visitor-num {
+  font-weight: 600;
+  color: var(--foreground);
 }
 
 /* Ask AI Section */
