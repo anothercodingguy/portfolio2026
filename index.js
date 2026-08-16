@@ -255,10 +255,14 @@ function initVisitorCounter() {
   const counterEl = document.getElementById('visitor-count');
   if (!counterEl) return;
 
+  const BASE_OFFSET = 184; // Starts count at 187 (184 + current API value 3)
+  const defaultCount = BASE_OFFSET + 3; // 187
   const cached = localStorage.getItem('cached_visitor_count');
-  let startValue = 0;
+  let startValue = defaultCount;
+
   if (cached) {
-    startValue = parseInt(cached, 10) || 0;
+    const parsed = parseInt(cached, 10);
+    startValue = (parsed >= BASE_OFFSET) ? parsed : defaultCount;
     counterEl.textContent = startValue.toLocaleString();
   }
 
@@ -274,15 +278,16 @@ function initVisitorCounter() {
     })
     .then(data => {
       if (data && typeof data.value === 'number') {
+        const totalVisits = BASE_OFFSET + data.value;
         sessionStorage.setItem('portfolio_session_visited', 'true');
-        localStorage.setItem('cached_visitor_count', data.value.toString());
-        animateCount(counterEl, startValue, data.value);
+        localStorage.setItem('cached_visitor_count', totalVisits.toString());
+        animateCount(counterEl, startValue, totalVisits);
       }
     })
     .catch(err => {
       console.warn('Could not fetch real-time visitor count:', err);
       if (!cached) {
-        counterEl.textContent = '1';
+        counterEl.textContent = defaultCount.toLocaleString();
       }
     });
 }
