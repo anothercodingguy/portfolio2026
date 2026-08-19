@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initMobileMenu();
   initVisitorCounter();
+  initGithubContributions();
 });
 
 /**
@@ -313,4 +314,70 @@ function animateCount(element, start, end, duration = 800) {
   };
   requestAnimationFrame(step);
 }
+
+/**
+ * Real-Time GitHub Contributions Fetcher
+ */
+function initGithubContributions() {
+  const svg = document.getElementById('github-heatmap-svg');
+  if (!svg) return;
+
+  const url = 'https://github-contributions-api.jogruber.de/v4/anothercodingguy?y=last';
+
+  fetch(url)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      if (data && Array.isArray(data.contributions) && data.contributions.length > 0) {
+        const total = data.total && typeof data.total.lastYear === 'number' ? data.total.lastYear : 1056;
+        const totalEl = document.getElementById('github-contrib-text');
+        if (totalEl) {
+          totalEl.textContent = `${total} contributions in the last year`;
+        }
+
+        const days = data.contributions;
+        const weeks = [];
+        let currentWeek = [];
+        for (const day of days) {
+          currentWeek.push(day);
+          if (currentWeek.length === 7) {
+            weeks.push(currentWeek);
+            currentWeek = [];
+          }
+        }
+        if (currentWeek.length > 0) {
+          while (currentWeek.length < 7) {
+            currentWeek.push({ date: '', count: 0, level: 0 });
+          }
+          weeks.push(currentWeek);
+        }
+
+        const recentWeeks = weeks.slice(-53);
+        const cellSize = 10;
+        const gap = 3;
+        let rectsHtml = '';
+
+        recentWeeks.forEach((week, wIdx) => {
+          const x = wIdx * (cellSize + gap);
+          week.forEach((day, dIdx) => {
+            const y = dIdx * (cellSize + gap);
+            const lvl = day.level || 0;
+            const cnt = day.count || 0;
+            const dt = day.date || '';
+            const tip = dt ? `${cnt} contributions on ${dt}` : 'No contributions';
+            rectsHtml += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2" class="contrib-cell lvl-${lvl}" data-date="${dt}" data-count="${cnt}"><title>${tip}</title></rect>`;
+          });
+        });
+
+        svg.innerHTML = rectsHtml;
+      }
+    })
+    .catch(err => {
+      // Soft catch: pre-rendered static SVG already displays immediately
+      console.warn('Live GitHub contribution fetch:', err);
+    });
+}
+
 
