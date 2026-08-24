@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suyash Singh | AI Researcher & Software Engineer</title>
-  <meta name="description" content="Portfolio of Suyash Singh, Computer Science student, AI researcher, and builder of scalable backend systems.">
+  <meta name="description" content="Portfolio of Suyash Singh, Computer Science student, published AI researcher (ICDDS 2025), and builder of production-grade LLM systems and scalable backend infrastructure.">
   <meta name="author" content="Suyash Singh">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://anothercodingguy.github.io/portfolio2026/">
@@ -27,7 +27,23 @@
   <meta name="twitter:image:alt" content="Suyash Singh — AI Researcher & Software Engineer">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>">
-  <link rel="stylesheet" href="index.css">
+  
+  <!-- Zero-FOUC Theme Init Script -->
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (!isDark) {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="index.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -52,15 +68,20 @@
     "knowsAbout": [
       "Artificial Intelligence",
       "Machine Learning",
+      "Machine Unlearning",
       "Large Language Models",
       "Distributed Systems",
       "Rust",
       "Go",
-      "Python"
+      "Python",
+      "FastAPI",
+      "Kubernetes"
     ],
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Computer Science Engineering"
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "educationalLevel": "Bachelor of Technology",
+      "about": "Computer Science Engineering"
     },
     "worksFor": {
       "@type": "Organization",
@@ -80,6 +101,7 @@
       <!-- Desktop Links -->
       <div class="nav-links" id="nav-links">
         <a href="#intro" class="nav-link active"><span>Home</span></a>
+        <a href="#skills" class="nav-link"><span>Skills</span></a>
         <a href="#experience" class="nav-link"><span>Experience</span></a>
         <a href="#projects" class="nav-link"><span>Projects</span></a>
         <a href="#writing" class="nav-link"><span>Writing</span></a>
@@ -94,7 +116,7 @@
           </svg>
         </button>
         <!-- Mobile Hamburger -->
-        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
           <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>
           </svg>
@@ -104,6 +126,7 @@
     <!-- Mobile Dropdown Menu -->
     <div class="mobile-nav" id="mobile-nav">
       <a href="#intro" class="mobile-nav-link">Home</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
       <a href="#experience" class="mobile-nav-link">Experience</a>
       <a href="#projects" class="mobile-nav-link">Projects</a>
       <a href="#writing" class="mobile-nav-link">Writing</a>
@@ -165,34 +188,104 @@
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
               </div>
-              <span class="contact-name">GitHub</span>
+              <div class="contact-text-col">
+                <span class="contact-name">GitHub</span>
+                <span class="contact-subtext font-mono text-muted">@anothercodingguy</span>
+              </div>
               <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
+
             <a href="https://www.linkedin.com/in/suyashin/" target="_blank" rel="noopener noreferrer" class="contact-card border-dashed">
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
               </div>
-              <span class="contact-name">LinkedIn</span>
+              <div class="contact-text-col">
+                <span class="contact-name">LinkedIn</span>
+                <span class="contact-subtext font-mono text-muted">/in/suyashin</span>
+              </div>
               <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
-            <a href="mailto:suyashs787@gmail.com" class="contact-card border-dashed">
+
+            <!-- One-Click Copy Email Button -->
+            <button id="copy-email-btn" type="button" class="contact-card border-dashed" aria-label="Copy email address suyashs787@gmail.com" title="Click to copy suyashs787@gmail.com">
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
-              <span class="contact-name">Mail</span>
+              <div class="contact-text-col">
+                <span class="contact-name">Mail</span>
+                <span class="contact-subtext font-mono text-muted">suyashs787@gmail.com</span>
+              </div>
               <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </a>
+            </button>
 
             <a href="https://cal.com/suyashh" target="_blank" rel="noopener noreferrer" class="contact-card border-dashed">
               <div class="contact-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
               </div>
-              <span class="contact-name">Call</span>
+              <div class="contact-text-col">
+                <span class="contact-name">Call</span>
+                <span class="contact-subtext font-mono text-muted">cal.com/suyashh</span>
+              </div>
               <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
           </div>
         </div>
       </header>
+
+      <!-- SKILLS MATRIX -->
+      <section id="skills" class="section-block border-t-dashed">
+        <h2 class="section-title font-serif">Core Skills & Stack</h2>
+        <div class="skills-grid">
+          <!-- Category 1: Languages -->
+          <div class="skill-category-card border-dashed">
+            <div class="skill-category-header">
+              <span class="category-icon">⚡</span>
+              <span class="category-title font-mono">LANGUAGES</span>
+            </div>
+            <div class="skills-tag-cloud font-mono">
+              <span class="skill-tag border-dashed">Rust</span>
+              <span class="skill-tag border-dashed">Go</span>
+              <span class="skill-tag border-dashed">Python</span>
+              <span class="skill-tag border-dashed">TypeScript</span>
+              <span class="skill-tag border-dashed">C++</span>
+              <span class="skill-tag border-dashed">SQL</span>
+            </div>
+          </div>
+
+          <!-- Category 2: AI & ML Systems -->
+          <div class="skill-category-card border-dashed">
+            <div class="skill-category-header">
+              <span class="category-icon">🧠</span>
+              <span class="category-title font-mono">AI & ML SYSTEMS</span>
+            </div>
+            <div class="skills-tag-cloud font-mono">
+              <span class="skill-tag border-dashed">PyTorch</span>
+              <span class="skill-tag border-dashed">Machine Unlearning</span>
+              <span class="skill-tag border-dashed">Hugging Face</span>
+              <span class="skill-tag border-dashed">LangChain</span>
+              <span class="skill-tag border-dashed">RAG Pipelines</span>
+              <span class="skill-tag border-dashed">Embeddings</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Backend & Infrastructure -->
+          <div class="skill-category-card border-dashed">
+            <div class="skill-category-header">
+              <span class="category-icon">🛠️</span>
+              <span class="category-title font-mono">BACKEND & INFRA</span>
+            </div>
+            <div class="skills-tag-cloud font-mono">
+              <span class="skill-tag border-dashed">FastAPI</span>
+              <span class="skill-tag border-dashed">Redis</span>
+              <span class="skill-tag border-dashed">Kubernetes</span>
+              <span class="skill-tag border-dashed">Docker</span>
+              <span class="skill-tag border-dashed">OpenTelemetry</span>
+              <span class="skill-tag border-dashed">AWS</span>
+              <span class="skill-tag border-dashed">Prometheus</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- EXPERIENCE -->
       <section id="experience" class="section-block border-t-dashed">
@@ -257,8 +350,9 @@
         <div class="projects-grid">
           <!-- Project 1: PathFlow -->
           <div class="project-card border-dashed">
-            <a href="https://thepathflow.online/" target="_blank" rel="noopener noreferrer" class="project-banner-link">
-              <div class="project-banner bg-gradient-4">
+            <a href="https://thepathflow.online/" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="Visit PathFlow live site">
+              <div class="project-banner-preview">
+                <img src="pathflow_preview.png" alt="PathFlow AI Production Debugging Platform UI" class="project-preview-img" loading="lazy">
                 <div class="project-banner-overlay">
                   <span class="banner-tag">● Live</span>
                 </div>
@@ -276,10 +370,10 @@
                   <span class="tech-tag border-dashed">OpenTelemetry</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://thepathflow.online/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live">
+                  <a href="https://thepathflow.online/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live" aria-label="Visit PathFlow Live Website">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   </a>
-                  <a href="https://github.com/anothercodingguy/pathflow" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub">
+                  <a href="https://github.com/anothercodingguy/pathflow" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub" aria-label="View PathFlow on GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
                   </a>
                 </div>
@@ -289,8 +383,9 @@
 
           <!-- Project 2: Semantic LLM Gateway -->
           <div class="project-card border-dashed">
-            <a href="https://semantic-llm.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-banner-link">
-              <div class="project-banner bg-gradient-1">
+            <a href="https://semantic-llm.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="Visit Semantic LLM Gateway live site">
+              <div class="project-banner-preview">
+                <img src="semantic_llm_preview.png" alt="Semantic LLM Gateway UI Preview" class="project-preview-img" loading="lazy">
                 <div class="project-banner-overlay">
                   <span class="banner-tag">● Live</span>
                 </div>
@@ -308,10 +403,10 @@
                   <span class="tech-tag border-dashed">FastAPI</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://semantic-llm.vercel.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live">
+                  <a href="https://semantic-llm.vercel.app/" target="_blank" rel="noopener noreferrer" class="icon-link" title="Live" aria-label="Visit Semantic LLM Gateway">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   </a>
-                  <a href="https://github.com/anothercodingguy/SemanticLLM" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub">
+                  <a href="https://github.com/anothercodingguy/SemanticLLM" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub" aria-label="View Semantic LLM on GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
                   </a>
                 </div>
@@ -321,10 +416,11 @@
           
           <!-- Project 3: SENNs -->
           <div class="project-card border-dashed">
-            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="project-banner-link">
-              <div class="project-banner bg-gradient-3">
+            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="Read SENNs IEEE research paper">
+              <div class="project-banner-preview">
+                <img src="senns_preview.jpg" alt="SENNs Machine Unlearning Research UI Preview" class="project-preview-img" loading="lazy">
                 <div class="project-banner-overlay">
-                  <span class="banner-tag">📄 Paper</span>
+                  <span class="banner-tag">📄 IEEE Paper</span>
                 </div>
               </div>
             </a>
@@ -340,7 +436,7 @@
                   <span class="tech-tag border-dashed">Python</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="icon-link" title="Read Paper">
+                  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="icon-link" title="Read Paper" aria-label="Read IEEE Paper">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                   </a>
                 </div>
@@ -350,22 +446,27 @@
 
           <!-- Project 4: The Watcher -->
           <div class="project-card border-dashed">
-            <a href="https://github.com/anothercodingguy/the-watcher" target="_blank" rel="noopener noreferrer" class="project-banner-link">
-              <div class="project-banner bg-gradient-2"></div>
+            <a href="https://github.com/anothercodingguy/the-watcher" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="View The Watcher repository">
+              <div class="project-banner-preview">
+                <img src="the_watcher_preview.jpg" alt="The Watcher AIOps Observability Pipeline Dashboard" class="project-preview-img" loading="lazy">
+                <div class="project-banner-overlay">
+                  <span class="banner-tag">🛡️ AIOps</span>
+                </div>
+              </div>
             </a>
             <div class="project-details">
               <div class="project-title-row">
-                <h3 class="project-title">The Watcher (AIOps)</h3>
+                <h3 class="project-title">The Watcher</h3>
               </div>
-              <p class="project-desc font-mono text-muted">Auto-remediation system running anomaly detection models at the edge for Kubernetes microservices (handles 5k+ RPS).</p>
+              <p class="project-desc font-mono text-muted">AIOps observability pipeline remediating microservice failures in &lt;15s via edge triggers with root-cause analysis.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
-                  <span class="tech-tag border-dashed">Go</span>
-                  <span class="tech-tag border-dashed">K8s</span>
-                  <span class="tech-tag border-dashed">Prometheus</span>
+                  <span class="tech-tag border-dashed">FastAPI</span>
+                  <span class="tech-tag border-dashed">Kubernetes</span>
+                  <span class="tech-tag border-dashed">OpenTelemetry</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://github.com/anothercodingguy/the-watcher" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub">
+                  <a href="https://github.com/anothercodingguy/the-watcher" target="_blank" rel="noopener noreferrer" class="icon-link" title="GitHub" aria-label="View The Watcher on GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
                   </a>
                 </div>
@@ -377,18 +478,50 @@
 
       <!-- WRITING / RESEARCH -->
       <section id="writing" class="section-block border-t-dashed">
-        <h2 class="section-title font-serif">Writing</h2>
+        <h2 class="section-title font-serif">Writing & Research</h2>
         <div class="writing-list">
-          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="writing-card border-dashed">
-            <div class="writing-icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          <div class="writing-card border-dashed">
+            <div class="writing-header-clickable" id="writing-toggle" role="button" aria-expanded="false" tabindex="0">
+              <div class="writing-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+              </div>
+              <div class="writing-info">
+                <span class="writing-title font-semibold">Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning</span>
+                <span class="writing-date font-mono text-muted">Published in ICDDS 2025 • IEEE Xplore (Click for details)</span>
+              </div>
+              <svg class="accordion-icon writing-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </div>
-            <div class="writing-info">
-              <span class="writing-title font-semibold">Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning</span>
-              <span class="writing-date font-mono text-muted">Published in ICDDS 2025</span>
+            
+            <!-- Expandable Abstract & BibTeX Area -->
+            <div class="writing-expanded-content" id="writing-details">
+              <div class="abstract-box font-mono">
+                <div class="abstract-heading font-semibold text-muted">ABSTRACT & NOVELTY:</div>
+                <p class="abstract-text">Addresses Article 17 "Right to be Forgotten" in deep learning systems by formulating an exact parameter unlearning method that removes target sample influences without requiring compute-intensive full retraining or catastrophic model drift.</p>
+                
+                <div class="abstract-guarantees">
+                  <div class="guarantee-item">
+                    <span class="bullet text-muted">•</span>
+                    <span><strong>Exact Parameter Erasure:</strong> Zero target data leakage verified against membership inference attacks.</span>
+                  </div>
+                  <div class="guarantee-item">
+                    <span class="bullet text-muted">•</span>
+                    <span><strong>Retained Generalization:</strong> &lt;0.05% deviation in classification accuracy on remaining distribution.</span>
+                  </div>
+                </div>
+
+                <div class="writing-links-row">
+                  <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="read-paper-btn border-dashed font-mono">
+                    <span>Read on IEEE Xplore</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                  <button id="copy-bibtex-btn" class="bibtex-btn border-dashed font-mono" title="Copy BibTeX Citation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span>Copy BibTeX</span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <svg class="contact-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -414,383 +547,13 @@
               </div>
               <div class="heatmap-svg-container">
                 <svg id="github-heatmap-svg" viewBox="0 0 686 88" width="100%" height="88" preserveAspectRatio="xMinYMin meet">
-<rect x="0" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-17" data-count="0"><title>0 contributions on 2025-08-17</title></rect>
-<rect x="0" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-08-18" data-count="2"><title>2 contributions on 2025-08-18</title></rect>
-<rect x="0" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-19" data-count="0"><title>0 contributions on 2025-08-19</title></rect>
-<rect x="0" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-08-20" data-count="2"><title>2 contributions on 2025-08-20</title></rect>
-<rect x="0" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-21" data-count="0"><title>0 contributions on 2025-08-21</title></rect>
-<rect x="0" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-08-22" data-count="2"><title>2 contributions on 2025-08-22</title></rect>
-<rect x="0" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-23" data-count="0"><title>0 contributions on 2025-08-23</title></rect>
-<rect x="13" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-24" data-count="0"><title>0 contributions on 2025-08-24</title></rect>
-<rect x="13" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-25" data-count="0"><title>0 contributions on 2025-08-25</title></rect>
-<rect x="13" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-26" data-count="0"><title>0 contributions on 2025-08-26</title></rect>
-<rect x="13" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-08-27" data-count="2"><title>2 contributions on 2025-08-27</title></rect>
-<rect x="13" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-28" data-count="0"><title>0 contributions on 2025-08-28</title></rect>
-<rect x="13" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-29" data-count="0"><title>0 contributions on 2025-08-29</title></rect>
-<rect x="13" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-30" data-count="0"><title>0 contributions on 2025-08-30</title></rect>
-<rect x="26" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-08-31" data-count="0"><title>0 contributions on 2025-08-31</title></rect>
-<rect x="26" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-01" data-count="2"><title>2 contributions on 2025-09-01</title></rect>
-<rect x="26" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-02" data-count="2"><title>2 contributions on 2025-09-02</title></rect>
-<rect x="26" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-03" data-count="2"><title>2 contributions on 2025-09-03</title></rect>
-<rect x="26" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-04" data-count="4"><title>4 contributions on 2025-09-04</title></rect>
-<rect x="26" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2025-09-05" data-count="14"><title>14 contributions on 2025-09-05</title></rect>
-<rect x="26" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2025-09-06" data-count="27"><title>27 contributions on 2025-09-06</title></rect>
-<rect x="39" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2025-09-07" data-count="6"><title>6 contributions on 2025-09-07</title></rect>
-<rect x="39" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-08" data-count="1"><title>1 contributions on 2025-09-08</title></rect>
-<rect x="39" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-09" data-count="0"><title>0 contributions on 2025-09-09</title></rect>
-<rect x="39" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-10" data-count="0"><title>0 contributions on 2025-09-10</title></rect>
-<rect x="39" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-11" data-count="0"><title>0 contributions on 2025-09-11</title></rect>
-<rect x="39" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-12" data-count="2"><title>2 contributions on 2025-09-12</title></rect>
-<rect x="39" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-13" data-count="2"><title>2 contributions on 2025-09-13</title></rect>
-<rect x="52" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-14" data-count="2"><title>2 contributions on 2025-09-14</title></rect>
-<rect x="52" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-15" data-count="0"><title>0 contributions on 2025-09-15</title></rect>
-<rect x="52" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-16" data-count="0"><title>0 contributions on 2025-09-16</title></rect>
-<rect x="52" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-17" data-count="0"><title>0 contributions on 2025-09-17</title></rect>
-<rect x="52" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-18" data-count="0"><title>0 contributions on 2025-09-18</title></rect>
-<rect x="52" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-19" data-count="0"><title>0 contributions on 2025-09-19</title></rect>
-<rect x="52" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-20" data-count="0"><title>0 contributions on 2025-09-20</title></rect>
-<rect x="65" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2025-09-21" data-count="24"><title>24 contributions on 2025-09-21</title></rect>
-<rect x="65" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2025-09-22" data-count="14"><title>14 contributions on 2025-09-22</title></rect>
-<rect x="65" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-23" data-count="0"><title>0 contributions on 2025-09-23</title></rect>
-<rect x="65" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-24" data-count="0"><title>0 contributions on 2025-09-24</title></rect>
-<rect x="65" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-25" data-count="2"><title>2 contributions on 2025-09-25</title></rect>
-<rect x="65" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-26" data-count="0"><title>0 contributions on 2025-09-26</title></rect>
-<rect x="65" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2025-09-27" data-count="6"><title>6 contributions on 2025-09-27</title></rect>
-<rect x="78" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-28" data-count="2"><title>2 contributions on 2025-09-28</title></rect>
-<rect x="78" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-09-29" data-count="2"><title>2 contributions on 2025-09-29</title></rect>
-<rect x="78" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-09-30" data-count="0"><title>0 contributions on 2025-09-30</title></rect>
-<rect x="78" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-01" data-count="0"><title>0 contributions on 2025-10-01</title></rect>
-<rect x="78" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-02" data-count="2"><title>2 contributions on 2025-10-02</title></rect>
-<rect x="78" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-03" data-count="0"><title>0 contributions on 2025-10-03</title></rect>
-<rect x="78" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-04" data-count="2"><title>2 contributions on 2025-10-04</title></rect>
-<rect x="91" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2025-10-05" data-count="10"><title>10 contributions on 2025-10-05</title></rect>
-<rect x="91" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-06" data-count="2"><title>2 contributions on 2025-10-06</title></rect>
-<rect x="91" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-07" data-count="2"><title>2 contributions on 2025-10-07</title></rect>
-<rect x="91" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-08" data-count="2"><title>2 contributions on 2025-10-08</title></rect>
-<rect x="91" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-09" data-count="2"><title>2 contributions on 2025-10-09</title></rect>
-<rect x="91" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-10" data-count="0"><title>0 contributions on 2025-10-10</title></rect>
-<rect x="91" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-11" data-count="0"><title>0 contributions on 2025-10-11</title></rect>
-<rect x="104" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-12" data-count="2"><title>2 contributions on 2025-10-12</title></rect>
-<rect x="104" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-13" data-count="2"><title>2 contributions on 2025-10-13</title></rect>
-<rect x="104" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-14" data-count="0"><title>0 contributions on 2025-10-14</title></rect>
-<rect x="104" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-15" data-count="0"><title>0 contributions on 2025-10-15</title></rect>
-<rect x="104" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-16" data-count="2"><title>2 contributions on 2025-10-16</title></rect>
-<rect x="104" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-17" data-count="0"><title>0 contributions on 2025-10-17</title></rect>
-<rect x="104" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-18" data-count="2"><title>2 contributions on 2025-10-18</title></rect>
-<rect x="117" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-19" data-count="0"><title>0 contributions on 2025-10-19</title></rect>
-<rect x="117" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-20" data-count="0"><title>0 contributions on 2025-10-20</title></rect>
-<rect x="117" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-21" data-count="0"><title>0 contributions on 2025-10-21</title></rect>
-<rect x="117" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-22" data-count="0"><title>0 contributions on 2025-10-22</title></rect>
-<rect x="117" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-23" data-count="0"><title>0 contributions on 2025-10-23</title></rect>
-<rect x="117" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-24" data-count="2"><title>2 contributions on 2025-10-24</title></rect>
-<rect x="117" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-25" data-count="2"><title>2 contributions on 2025-10-25</title></rect>
-<rect x="130" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-26" data-count="2"><title>2 contributions on 2025-10-26</title></rect>
-<rect x="130" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-27" data-count="1"><title>1 contributions on 2025-10-27</title></rect>
-<rect x="130" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-10-28" data-count="2"><title>2 contributions on 2025-10-28</title></rect>
-<rect x="130" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-29" data-count="0"><title>0 contributions on 2025-10-29</title></rect>
-<rect x="130" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-30" data-count="0"><title>0 contributions on 2025-10-30</title></rect>
-<rect x="130" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-10-31" data-count="0"><title>0 contributions on 2025-10-31</title></rect>
-<rect x="130" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-01" data-count="1"><title>1 contributions on 2025-11-01</title></rect>
-<rect x="143" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-02" data-count="0"><title>0 contributions on 2025-11-02</title></rect>
-<rect x="143" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-03" data-count="0"><title>0 contributions on 2025-11-03</title></rect>
-<rect x="143" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2025-11-04" data-count="11"><title>11 contributions on 2025-11-04</title></rect>
-<rect x="143" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-05" data-count="2"><title>2 contributions on 2025-11-05</title></rect>
-<rect x="143" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-06" data-count="0"><title>0 contributions on 2025-11-06</title></rect>
-<rect x="143" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-07" data-count="0"><title>0 contributions on 2025-11-07</title></rect>
-<rect x="143" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-08" data-count="2"><title>2 contributions on 2025-11-08</title></rect>
-<rect x="156" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-09" data-count="2"><title>2 contributions on 2025-11-09</title></rect>
-<rect x="156" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-10" data-count="0"><title>0 contributions on 2025-11-10</title></rect>
-<rect x="156" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-11" data-count="0"><title>0 contributions on 2025-11-11</title></rect>
-<rect x="156" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-12" data-count="2"><title>2 contributions on 2025-11-12</title></rect>
-<rect x="156" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-13" data-count="0"><title>0 contributions on 2025-11-13</title></rect>
-<rect x="156" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-14" data-count="0"><title>0 contributions on 2025-11-14</title></rect>
-<rect x="156" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-15" data-count="2"><title>2 contributions on 2025-11-15</title></rect>
-<rect x="169" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-16" data-count="0"><title>0 contributions on 2025-11-16</title></rect>
-<rect x="169" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-17" data-count="0"><title>0 contributions on 2025-11-17</title></rect>
-<rect x="169" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-18" data-count="0"><title>0 contributions on 2025-11-18</title></rect>
-<rect x="169" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-19" data-count="2"><title>2 contributions on 2025-11-19</title></rect>
-<rect x="169" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-20" data-count="0"><title>0 contributions on 2025-11-20</title></rect>
-<rect x="169" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-21" data-count="0"><title>0 contributions on 2025-11-21</title></rect>
-<rect x="169" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-22" data-count="0"><title>0 contributions on 2025-11-22</title></rect>
-<rect x="182" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-23" data-count="0"><title>0 contributions on 2025-11-23</title></rect>
-<rect x="182" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-24" data-count="0"><title>0 contributions on 2025-11-24</title></rect>
-<rect x="182" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-25" data-count="0"><title>0 contributions on 2025-11-25</title></rect>
-<rect x="182" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-11-26" data-count="2"><title>2 contributions on 2025-11-26</title></rect>
-<rect x="182" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-27" data-count="0"><title>0 contributions on 2025-11-27</title></rect>
-<rect x="182" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-28" data-count="0"><title>0 contributions on 2025-11-28</title></rect>
-<rect x="182" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-29" data-count="0"><title>0 contributions on 2025-11-29</title></rect>
-<rect x="195" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-11-30" data-count="0"><title>0 contributions on 2025-11-30</title></rect>
-<rect x="195" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-01" data-count="2"><title>2 contributions on 2025-12-01</title></rect>
-<rect x="195" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-02" data-count="0"><title>0 contributions on 2025-12-02</title></rect>
-<rect x="195" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-03" data-count="2"><title>2 contributions on 2025-12-03</title></rect>
-<rect x="195" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-04" data-count="2"><title>2 contributions on 2025-12-04</title></rect>
-<rect x="195" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-05" data-count="2"><title>2 contributions on 2025-12-05</title></rect>
-<rect x="195" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-06" data-count="0"><title>0 contributions on 2025-12-06</title></rect>
-<rect x="208" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-07" data-count="2"><title>2 contributions on 2025-12-07</title></rect>
-<rect x="208" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-08" data-count="0"><title>0 contributions on 2025-12-08</title></rect>
-<rect x="208" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-09" data-count="2"><title>2 contributions on 2025-12-09</title></rect>
-<rect x="208" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-10" data-count="2"><title>2 contributions on 2025-12-10</title></rect>
-<rect x="208" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-11" data-count="0"><title>0 contributions on 2025-12-11</title></rect>
-<rect x="208" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-12" data-count="0"><title>0 contributions on 2025-12-12</title></rect>
-<rect x="208" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-13" data-count="0"><title>0 contributions on 2025-12-13</title></rect>
-<rect x="221" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-14" data-count="0"><title>0 contributions on 2025-12-14</title></rect>
-<rect x="221" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-15" data-count="0"><title>0 contributions on 2025-12-15</title></rect>
-<rect x="221" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-16" data-count="2"><title>2 contributions on 2025-12-16</title></rect>
-<rect x="221" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-17" data-count="0"><title>0 contributions on 2025-12-17</title></rect>
-<rect x="221" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-18" data-count="0"><title>0 contributions on 2025-12-18</title></rect>
-<rect x="221" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-19" data-count="5"><title>5 contributions on 2025-12-19</title></rect>
-<rect x="221" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-20" data-count="1"><title>1 contributions on 2025-12-20</title></rect>
-<rect x="234" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-21" data-count="0"><title>0 contributions on 2025-12-21</title></rect>
-<rect x="234" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-22" data-count="0"><title>0 contributions on 2025-12-22</title></rect>
-<rect x="234" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-23" data-count="0"><title>0 contributions on 2025-12-23</title></rect>
-<rect x="234" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-24" data-count="0"><title>0 contributions on 2025-12-24</title></rect>
-<rect x="234" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-25" data-count="2"><title>2 contributions on 2025-12-25</title></rect>
-<rect x="234" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-26" data-count="0"><title>0 contributions on 2025-12-26</title></rect>
-<rect x="234" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-27" data-count="2"><title>2 contributions on 2025-12-27</title></rect>
-<rect x="247" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-28" data-count="2"><title>2 contributions on 2025-12-28</title></rect>
-<rect x="247" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2025-12-29" data-count="0"><title>0 contributions on 2025-12-29</title></rect>
-<rect x="247" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-30" data-count="2"><title>2 contributions on 2025-12-30</title></rect>
-<rect x="247" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2025-12-31" data-count="2"><title>2 contributions on 2025-12-31</title></rect>
-<rect x="247" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-01" data-count="0"><title>0 contributions on 2026-01-01</title></rect>
-<rect x="247" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-02" data-count="0"><title>0 contributions on 2026-01-02</title></rect>
-<rect x="247" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-03" data-count="0"><title>0 contributions on 2026-01-03</title></rect>
-<rect x="260" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-04" data-count="1"><title>1 contributions on 2026-01-04</title></rect>
-<rect x="260" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-05" data-count="2"><title>2 contributions on 2026-01-05</title></rect>
-<rect x="260" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-06" data-count="0"><title>0 contributions on 2026-01-06</title></rect>
-<rect x="260" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-07" data-count="0"><title>0 contributions on 2026-01-07</title></rect>
-<rect x="260" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-08" data-count="0"><title>0 contributions on 2026-01-08</title></rect>
-<rect x="260" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-09" data-count="0"><title>0 contributions on 2026-01-09</title></rect>
-<rect x="260" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-10" data-count="0"><title>0 contributions on 2026-01-10</title></rect>
-<rect x="273" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-11" data-count="0"><title>0 contributions on 2026-01-11</title></rect>
-<rect x="273" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-12" data-count="2"><title>2 contributions on 2026-01-12</title></rect>
-<rect x="273" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-13" data-count="0"><title>0 contributions on 2026-01-13</title></rect>
-<rect x="273" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-01-14" data-count="15"><title>15 contributions on 2026-01-14</title></rect>
-<rect x="273" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-01-15" data-count="7"><title>7 contributions on 2026-01-15</title></rect>
-<rect x="273" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-16" data-count="3"><title>3 contributions on 2026-01-16</title></rect>
-<rect x="273" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-17" data-count="2"><title>2 contributions on 2026-01-17</title></rect>
-<rect x="286" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-18" data-count="0"><title>0 contributions on 2026-01-18</title></rect>
-<rect x="286" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-19" data-count="0"><title>0 contributions on 2026-01-19</title></rect>
-<rect x="286" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-20" data-count="2"><title>2 contributions on 2026-01-20</title></rect>
-<rect x="286" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-21" data-count="2"><title>2 contributions on 2026-01-21</title></rect>
-<rect x="286" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-22" data-count="1"><title>1 contributions on 2026-01-22</title></rect>
-<rect x="286" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-01-23" data-count="10"><title>10 contributions on 2026-01-23</title></rect>
-<rect x="286" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-24" data-count="2"><title>2 contributions on 2026-01-24</title></rect>
-<rect x="299" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-25" data-count="1"><title>1 contributions on 2026-01-25</title></rect>
-<rect x="299" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-26" data-count="1"><title>1 contributions on 2026-01-26</title></rect>
-<rect x="299" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-27" data-count="5"><title>5 contributions on 2026-01-27</title></rect>
-<rect x="299" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-28" data-count="3"><title>3 contributions on 2026-01-28</title></rect>
-<rect x="299" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-01-29" data-count="0"><title>0 contributions on 2026-01-29</title></rect>
-<rect x="299" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-30" data-count="2"><title>2 contributions on 2026-01-30</title></rect>
-<rect x="299" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-01-31" data-count="5"><title>5 contributions on 2026-01-31</title></rect>
-<rect x="312" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-01" data-count="0"><title>0 contributions on 2026-02-01</title></rect>
-<rect x="312" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-02" data-count="2"><title>2 contributions on 2026-02-02</title></rect>
-<rect x="312" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-03" data-count="0"><title>0 contributions on 2026-02-03</title></rect>
-<rect x="312" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-04" data-count="0"><title>0 contributions on 2026-02-04</title></rect>
-<rect x="312" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-05" data-count="0"><title>0 contributions on 2026-02-05</title></rect>
-<rect x="312" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-02-06" data-count="10"><title>10 contributions on 2026-02-06</title></rect>
-<rect x="312" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-07" data-count="0"><title>0 contributions on 2026-02-07</title></rect>
-<rect x="325" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-08" data-count="5"><title>5 contributions on 2026-02-08</title></rect>
-<rect x="325" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-09" data-count="2"><title>2 contributions on 2026-02-09</title></rect>
-<rect x="325" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-10" data-count="0"><title>0 contributions on 2026-02-10</title></rect>
-<rect x="325" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-02-11" data-count="10"><title>10 contributions on 2026-02-11</title></rect>
-<rect x="325" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-02-12" data-count="6"><title>6 contributions on 2026-02-12</title></rect>
-<rect x="325" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-13" data-count="3"><title>3 contributions on 2026-02-13</title></rect>
-<rect x="325" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-14" data-count="3"><title>3 contributions on 2026-02-14</title></rect>
-<rect x="338" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-15" data-count="0"><title>0 contributions on 2026-02-15</title></rect>
-<rect x="338" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-16" data-count="0"><title>0 contributions on 2026-02-16</title></rect>
-<rect x="338" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-17" data-count="0"><title>0 contributions on 2026-02-17</title></rect>
-<rect x="338" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-18" data-count="4"><title>4 contributions on 2026-02-18</title></rect>
-<rect x="338" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-19" data-count="0"><title>0 contributions on 2026-02-19</title></rect>
-<rect x="338" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-20" data-count="2"><title>2 contributions on 2026-02-20</title></rect>
-<rect x="338" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-21" data-count="2"><title>2 contributions on 2026-02-21</title></rect>
-<rect x="351" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-22" data-count="0"><title>0 contributions on 2026-02-22</title></rect>
-<rect x="351" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-23" data-count="0"><title>0 contributions on 2026-02-23</title></rect>
-<rect x="351" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-24" data-count="0"><title>0 contributions on 2026-02-24</title></rect>
-<rect x="351" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-25" data-count="2"><title>2 contributions on 2026-02-25</title></rect>
-<rect x="351" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-26" data-count="0"><title>0 contributions on 2026-02-26</title></rect>
-<rect x="351" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-02-27" data-count="0"><title>0 contributions on 2026-02-27</title></rect>
-<rect x="351" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-02-28" data-count="2"><title>2 contributions on 2026-02-28</title></rect>
-<rect x="364" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-01" data-count="2"><title>2 contributions on 2026-03-01</title></rect>
-<rect x="364" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-02" data-count="0"><title>0 contributions on 2026-03-02</title></rect>
-<rect x="364" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-03" data-count="0"><title>0 contributions on 2026-03-03</title></rect>
-<rect x="364" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-04" data-count="0"><title>0 contributions on 2026-03-04</title></rect>
-<rect x="364" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-05" data-count="0"><title>0 contributions on 2026-03-05</title></rect>
-<rect x="364" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-06" data-count="2"><title>2 contributions on 2026-03-06</title></rect>
-<rect x="364" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-07" data-count="0"><title>0 contributions on 2026-03-07</title></rect>
-<rect x="377" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-08" data-count="0"><title>0 contributions on 2026-03-08</title></rect>
-<rect x="377" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-09" data-count="0"><title>0 contributions on 2026-03-09</title></rect>
-<rect x="377" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-10" data-count="2"><title>2 contributions on 2026-03-10</title></rect>
-<rect x="377" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-11" data-count="4"><title>4 contributions on 2026-03-11</title></rect>
-<rect x="377" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-12" data-count="0"><title>0 contributions on 2026-03-12</title></rect>
-<rect x="377" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-13" data-count="2"><title>2 contributions on 2026-03-13</title></rect>
-<rect x="377" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-03-14" data-count="9"><title>9 contributions on 2026-03-14</title></rect>
-<rect x="390" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-15" data-count="5"><title>5 contributions on 2026-03-15</title></rect>
-<rect x="390" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-16" data-count="2"><title>2 contributions on 2026-03-16</title></rect>
-<rect x="390" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-17" data-count="0"><title>0 contributions on 2026-03-17</title></rect>
-<rect x="390" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-18" data-count="0"><title>0 contributions on 2026-03-18</title></rect>
-<rect x="390" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-19" data-count="1"><title>1 contributions on 2026-03-19</title></rect>
-<rect x="390" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-20" data-count="1"><title>1 contributions on 2026-03-20</title></rect>
-<rect x="390" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-21" data-count="0"><title>0 contributions on 2026-03-21</title></rect>
-<rect x="403" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-22" data-count="1"><title>1 contributions on 2026-03-22</title></rect>
-<rect x="403" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-03-23" data-count="14"><title>14 contributions on 2026-03-23</title></rect>
-<rect x="403" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-24" data-count="0"><title>0 contributions on 2026-03-24</title></rect>
-<rect x="403" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-25" data-count="4"><title>4 contributions on 2026-03-25</title></rect>
-<rect x="403" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-26" data-count="0"><title>0 contributions on 2026-03-26</title></rect>
-<rect x="403" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-27" data-count="3"><title>3 contributions on 2026-03-27</title></rect>
-<rect x="403" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-03-28" data-count="49"><title>49 contributions on 2026-03-28</title></rect>
-<rect x="416" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-29" data-count="0"><title>0 contributions on 2026-03-29</title></rect>
-<rect x="416" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-03-30" data-count="3"><title>3 contributions on 2026-03-30</title></rect>
-<rect x="416" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-03-31" data-count="0"><title>0 contributions on 2026-03-31</title></rect>
-<rect x="416" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-01" data-count="0"><title>0 contributions on 2026-04-01</title></rect>
-<rect x="416" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-02" data-count="0"><title>0 contributions on 2026-04-02</title></rect>
-<rect x="416" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-03" data-count="5"><title>5 contributions on 2026-04-03</title></rect>
-<rect x="416" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-04" data-count="5"><title>5 contributions on 2026-04-04</title></rect>
-<rect x="429" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-05" data-count="0"><title>0 contributions on 2026-04-05</title></rect>
-<rect x="429" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-06" data-count="0"><title>0 contributions on 2026-04-06</title></rect>
-<rect x="429" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-07" data-count="0"><title>0 contributions on 2026-04-07</title></rect>
-<rect x="429" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-08" data-count="2"><title>2 contributions on 2026-04-08</title></rect>
-<rect x="429" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-09" data-count="0"><title>0 contributions on 2026-04-09</title></rect>
-<rect x="429" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-10" data-count="2"><title>2 contributions on 2026-04-10</title></rect>
-<rect x="429" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-11" data-count="2"><title>2 contributions on 2026-04-11</title></rect>
-<rect x="442" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-12" data-count="2"><title>2 contributions on 2026-04-12</title></rect>
-<rect x="442" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-13" data-count="0"><title>0 contributions on 2026-04-13</title></rect>
-<rect x="442" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-14" data-count="2"><title>2 contributions on 2026-04-14</title></rect>
-<rect x="442" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-15" data-count="0"><title>0 contributions on 2026-04-15</title></rect>
-<rect x="442" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-16" data-count="4"><title>4 contributions on 2026-04-16</title></rect>
-<rect x="442" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-17" data-count="2"><title>2 contributions on 2026-04-17</title></rect>
-<rect x="442" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-18" data-count="0"><title>0 contributions on 2026-04-18</title></rect>
-<rect x="455" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-19" data-count="3"><title>3 contributions on 2026-04-19</title></rect>
-<rect x="455" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-04-20" data-count="8"><title>8 contributions on 2026-04-20</title></rect>
-<rect x="455" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-21" data-count="2"><title>2 contributions on 2026-04-21</title></rect>
-<rect x="455" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-22" data-count="1"><title>1 contributions on 2026-04-22</title></rect>
-<rect x="455" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-23" data-count="0"><title>0 contributions on 2026-04-23</title></rect>
-<rect x="455" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-24" data-count="0"><title>0 contributions on 2026-04-24</title></rect>
-<rect x="455" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-25" data-count="0"><title>0 contributions on 2026-04-25</title></rect>
-<rect x="468" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-26" data-count="0"><title>0 contributions on 2026-04-26</title></rect>
-<rect x="468" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-27" data-count="3"><title>3 contributions on 2026-04-27</title></rect>
-<rect x="468" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-28" data-count="5"><title>5 contributions on 2026-04-28</title></rect>
-<rect x="468" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-04-29" data-count="0"><title>0 contributions on 2026-04-29</title></rect>
-<rect x="468" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-04-30" data-count="2"><title>2 contributions on 2026-04-30</title></rect>
-<rect x="468" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-01" data-count="2"><title>2 contributions on 2026-05-01</title></rect>
-<rect x="468" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-02" data-count="2"><title>2 contributions on 2026-05-02</title></rect>
-<rect x="481" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-03" data-count="0"><title>0 contributions on 2026-05-03</title></rect>
-<rect x="481" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-04" data-count="0"><title>0 contributions on 2026-05-04</title></rect>
-<rect x="481" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-05" data-count="0"><title>0 contributions on 2026-05-05</title></rect>
-<rect x="481" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-06" data-count="2"><title>2 contributions on 2026-05-06</title></rect>
-<rect x="481" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-07" data-count="2"><title>2 contributions on 2026-05-07</title></rect>
-<rect x="481" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-08" data-count="2"><title>2 contributions on 2026-05-08</title></rect>
-<rect x="481" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-09" data-count="2"><title>2 contributions on 2026-05-09</title></rect>
-<rect x="494" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-10" data-count="0"><title>0 contributions on 2026-05-10</title></rect>
-<rect x="494" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-11" data-count="2"><title>2 contributions on 2026-05-11</title></rect>
-<rect x="494" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-12" data-count="2"><title>2 contributions on 2026-05-12</title></rect>
-<rect x="494" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-13" data-count="0"><title>0 contributions on 2026-05-13</title></rect>
-<rect x="494" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-14" data-count="2"><title>2 contributions on 2026-05-14</title></rect>
-<rect x="494" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-15" data-count="2"><title>2 contributions on 2026-05-15</title></rect>
-<rect x="494" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-16" data-count="2"><title>2 contributions on 2026-05-16</title></rect>
-<rect x="507" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-17" data-count="0"><title>0 contributions on 2026-05-17</title></rect>
-<rect x="507" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-18" data-count="0"><title>0 contributions on 2026-05-18</title></rect>
-<rect x="507" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-19" data-count="0"><title>0 contributions on 2026-05-19</title></rect>
-<rect x="507" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-20" data-count="0"><title>0 contributions on 2026-05-20</title></rect>
-<rect x="507" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-21" data-count="0"><title>0 contributions on 2026-05-21</title></rect>
-<rect x="507" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-22" data-count="0"><title>0 contributions on 2026-05-22</title></rect>
-<rect x="507" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-23" data-count="2"><title>2 contributions on 2026-05-23</title></rect>
-<rect x="520" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-24" data-count="2"><title>2 contributions on 2026-05-24</title></rect>
-<rect x="520" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-25" data-count="5"><title>5 contributions on 2026-05-25</title></rect>
-<rect x="520" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-26" data-count="2"><title>2 contributions on 2026-05-26</title></rect>
-<rect x="520" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-05-27" data-count="0"><title>0 contributions on 2026-05-27</title></rect>
-<rect x="520" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-28" data-count="2"><title>2 contributions on 2026-05-28</title></rect>
-<rect x="520" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-29" data-count="3"><title>3 contributions on 2026-05-29</title></rect>
-<rect x="520" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-30" data-count="2"><title>2 contributions on 2026-05-30</title></rect>
-<rect x="533" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-05-31" data-count="4"><title>4 contributions on 2026-05-31</title></rect>
-<rect x="533" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-01" data-count="2"><title>2 contributions on 2026-06-01</title></rect>
-<rect x="533" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-02" data-count="0"><title>0 contributions on 2026-06-02</title></rect>
-<rect x="533" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-03" data-count="0"><title>0 contributions on 2026-06-03</title></rect>
-<rect x="533" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-04" data-count="2"><title>2 contributions on 2026-06-04</title></rect>
-<rect x="533" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-05" data-count="2"><title>2 contributions on 2026-06-05</title></rect>
-<rect x="533" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-06" data-count="2"><title>2 contributions on 2026-06-06</title></rect>
-<rect x="546" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-07" data-count="0"><title>0 contributions on 2026-06-07</title></rect>
-<rect x="546" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-08" data-count="0"><title>0 contributions on 2026-06-08</title></rect>
-<rect x="546" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-09" data-count="2"><title>2 contributions on 2026-06-09</title></rect>
-<rect x="546" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-10" data-count="0"><title>0 contributions on 2026-06-10</title></rect>
-<rect x="546" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-11" data-count="0"><title>0 contributions on 2026-06-11</title></rect>
-<rect x="546" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-12" data-count="2"><title>2 contributions on 2026-06-12</title></rect>
-<rect x="546" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-13" data-count="2"><title>2 contributions on 2026-06-13</title></rect>
-<rect x="559" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-14" data-count="0"><title>0 contributions on 2026-06-14</title></rect>
-<rect x="559" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-15" data-count="0"><title>0 contributions on 2026-06-15</title></rect>
-<rect x="559" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-16" data-count="0"><title>0 contributions on 2026-06-16</title></rect>
-<rect x="559" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-06-17" data-count="17"><title>17 contributions on 2026-06-17</title></rect>
-<rect x="559" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-06-18" data-count="7"><title>7 contributions on 2026-06-18</title></rect>
-<rect x="559" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-19" data-count="2"><title>2 contributions on 2026-06-19</title></rect>
-<rect x="559" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-20" data-count="0"><title>0 contributions on 2026-06-20</title></rect>
-<rect x="572" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-21" data-count="0"><title>0 contributions on 2026-06-21</title></rect>
-<rect x="572" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-22" data-count="0"><title>0 contributions on 2026-06-22</title></rect>
-<rect x="572" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-23" data-count="1"><title>1 contributions on 2026-06-23</title></rect>
-<rect x="572" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-24" data-count="1"><title>1 contributions on 2026-06-24</title></rect>
-<rect x="572" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-25" data-count="0"><title>0 contributions on 2026-06-25</title></rect>
-<rect x="572" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-06-26" data-count="5"><title>5 contributions on 2026-06-26</title></rect>
-<rect x="572" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-27" data-count="0"><title>0 contributions on 2026-06-27</title></rect>
-<rect x="585" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-28" data-count="0"><title>0 contributions on 2026-06-28</title></rect>
-<rect x="585" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-29" data-count="0"><title>0 contributions on 2026-06-29</title></rect>
-<rect x="585" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-06-30" data-count="0"><title>0 contributions on 2026-06-30</title></rect>
-<rect x="585" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-01" data-count="2"><title>2 contributions on 2026-07-01</title></rect>
-<rect x="585" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-02" data-count="0"><title>0 contributions on 2026-07-02</title></rect>
-<rect x="585" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-03" data-count="2"><title>2 contributions on 2026-07-03</title></rect>
-<rect x="585" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-04" data-count="0"><title>0 contributions on 2026-07-04</title></rect>
-<rect x="598" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-05" data-count="0"><title>0 contributions on 2026-07-05</title></rect>
-<rect x="598" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-06" data-count="2"><title>2 contributions on 2026-07-06</title></rect>
-<rect x="598" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-07" data-count="2"><title>2 contributions on 2026-07-07</title></rect>
-<rect x="598" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-07-08" data-count="19"><title>19 contributions on 2026-07-08</title></rect>
-<rect x="598" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-09" data-count="2"><title>2 contributions on 2026-07-09</title></rect>
-<rect x="598" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-10" data-count="0"><title>0 contributions on 2026-07-10</title></rect>
-<rect x="598" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-07-11" data-count="11"><title>11 contributions on 2026-07-11</title></rect>
-<rect x="611" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-12" data-count="2"><title>2 contributions on 2026-07-12</title></rect>
-<rect x="611" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-13" data-count="0"><title>0 contributions on 2026-07-13</title></rect>
-<rect x="611" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-14" data-count="2"><title>2 contributions on 2026-07-14</title></rect>
-<rect x="611" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-15" data-count="0"><title>0 contributions on 2026-07-15</title></rect>
-<rect x="611" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-16" data-count="4"><title>4 contributions on 2026-07-16</title></rect>
-<rect x="611" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-17" data-count="1"><title>1 contributions on 2026-07-17</title></rect>
-<rect x="611" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-18" data-count="0"><title>0 contributions on 2026-07-18</title></rect>
-<rect x="624" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-19" data-count="0"><title>0 contributions on 2026-07-19</title></rect>
-<rect x="624" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-20" data-count="0"><title>0 contributions on 2026-07-20</title></rect>
-<rect x="624" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-21" data-count="0"><title>0 contributions on 2026-07-21</title></rect>
-<rect x="624" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-22" data-count="0"><title>0 contributions on 2026-07-22</title></rect>
-<rect x="624" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-23" data-count="0"><title>0 contributions on 2026-07-23</title></rect>
-<rect x="624" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-24" data-count="0"><title>0 contributions on 2026-07-24</title></rect>
-<rect x="624" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-07-25" data-count="0"><title>0 contributions on 2026-07-25</title></rect>
-<rect x="637" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-26" data-count="1"><title>1 contributions on 2026-07-26</title></rect>
-<rect x="637" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-27" data-count="1"><title>1 contributions on 2026-07-27</title></rect>
-<rect x="637" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-07-28" data-count="8"><title>8 contributions on 2026-07-28</title></rect>
-<rect x="637" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-29" data-count="4"><title>4 contributions on 2026-07-29</title></rect>
-<rect x="637" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-07-30" data-count="1"><title>1 contributions on 2026-07-30</title></rect>
-<rect x="637" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-07-31" data-count="19"><title>19 contributions on 2026-07-31</title></rect>
-<rect x="637" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-01" data-count="0"><title>0 contributions on 2026-08-01</title></rect>
-<rect x="650" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-02" data-count="1"><title>1 contributions on 2026-08-02</title></rect>
-<rect x="650" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-03" data-count="0"><title>0 contributions on 2026-08-03</title></rect>
-<rect x="650" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-04" data-count="0"><title>0 contributions on 2026-08-04</title></rect>
-<rect x="650" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-05" data-count="2"><title>2 contributions on 2026-08-05</title></rect>
-<rect x="650" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-06" data-count="4"><title>4 contributions on 2026-08-06</title></rect>
-<rect x="650" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-08-07" data-count="16"><title>16 contributions on 2026-08-07</title></rect>
-<rect x="650" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-08-08" data-count="14"><title>14 contributions on 2026-08-08</title></rect>
-<rect x="663" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-09" data-count="1"><title>1 contributions on 2026-08-09</title></rect>
-<rect x="663" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-10" data-count="4"><title>4 contributions on 2026-08-10</title></rect>
-<rect x="663" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-11" data-count="0"><title>0 contributions on 2026-08-11</title></rect>
-<rect x="663" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-12" data-count="0"><title>0 contributions on 2026-08-12</title></rect>
-<rect x="663" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-08-13" data-count="7"><title>7 contributions on 2026-08-13</title></rect>
-<rect x="663" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-08-14" data-count="15"><title>15 contributions on 2026-08-14</title></rect>
-<rect x="663" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-3" data-date="2026-08-15" data-count="12"><title>12 contributions on 2026-08-15</title></rect>
-<rect x="676" y="0" width="10" height="10" rx="2" class="contrib-cell lvl-4" data-date="2026-08-16" data-count="20"><title>20 contributions on 2026-08-16</title></rect>
-<rect x="676" y="13" width="10" height="10" rx="2" class="contrib-cell lvl-2" data-date="2026-08-17" data-count="9"><title>9 contributions on 2026-08-17</title></rect>
-<rect x="676" y="26" width="10" height="10" rx="2" class="contrib-cell lvl-1" data-date="2026-08-18" data-count="5"><title>5 contributions on 2026-08-18</title></rect>
-<rect x="676" y="39" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="2026-08-19" data-count="0"><title>0 contributions on 2026-08-19</title></rect>
-<rect x="676" y="52" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="" data-count="0"><title>No contributions</title></rect>
-<rect x="676" y="65" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="" data-count="0"><title>No contributions</title></rect>
-<rect x="676" y="78" width="10" height="10" rx="2" class="contrib-cell lvl-0" data-date="" data-count="0"><title>No contributions</title></rect>
+                  <rect width="686" height="88" fill="transparent"/>
                 </svg>
               </div>
             </div>
 
             <div class="heatmap-footer font-mono text-muted">
-              <span id="github-contrib-text" class="contrib-total">1056 contributions in the last year</span>
+              <span id="github-contrib-text" class="contrib-total">1056+ contributions in the last year</span>
               <div class="heatmap-legend">
                 <span>Less</span>
                 <span class="legend-cell lvl-0"></span>
@@ -807,10 +570,10 @@
           <div class="activity-card border-dashed">
             <div class="activity-card-header">
               <div class="activity-title-row">
-                <span class="activity-card-title font-mono">LEETCODE</span>
-                <svg class="activity-card-icon leetcode-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <svg class="activity-card-icon leetcode-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                   <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
                 </svg>
+                <h3 class="activity-card-title font-mono">LEETCODE</h3>
               </div>
               <div class="leetcode-stats-badge font-mono">
                 <span class="leetcode-count">254</span> <span class="text-muted">Solved</span>
@@ -819,7 +582,7 @@
 
             <div class="leetcode-bars">
               <!-- Easy -->
-              <div class="leetcode-row">
+              <div class="leetcode-row" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="254" aria-label="Easy problems solved">
                 <div class="leetcode-row-meta">
                   <span class="difficulty-name">Easy</span>
                   <span class="difficulty-num font-mono">97</span>
@@ -829,7 +592,7 @@
                 </div>
               </div>
               <!-- Medium -->
-              <div class="leetcode-row">
+              <div class="leetcode-row" role="progressbar" aria-valuenow="136" aria-valuemin="0" aria-valuemax="254" aria-label="Medium problems solved">
                 <div class="leetcode-row-meta">
                   <span class="difficulty-name">Medium</span>
                   <span class="difficulty-num font-mono">136</span>
@@ -839,7 +602,7 @@
                 </div>
               </div>
               <!-- Hard -->
-              <div class="leetcode-row">
+              <div class="leetcode-row" role="progressbar" aria-valuenow="21" aria-valuemin="0" aria-valuemax="254" aria-label="Hard problems solved">
                 <div class="leetcode-row-meta">
                   <span class="difficulty-name">Hard</span>
                   <span class="difficulty-num font-mono">21</span>
@@ -891,6 +654,9 @@
     </div> <!-- End layout-container -->
   </div> <!-- End layout-wrapper -->
 
-  <script src="index.js"></script>
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast font-mono" role="status" aria-live="polite"></div>
+
+  <script src="index.js?v=6"></script>
 </body>
 </html>

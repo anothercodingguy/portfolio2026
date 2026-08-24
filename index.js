@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initAccordions();
+  initWritingAbstract();
+  initCopyEmail();
   initScrollSpy();
   initClock();
   initMobileMenu();
@@ -9,12 +11,40 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Theme Toggle & System Preference Sync
+ * Toast Notification System
+ */
+let toastTimeout = null;
+function showToast(message, duration = 2800) {
+  let toastEl = document.getElementById('toast');
+  if (!toastEl) {
+    toastEl = document.createElement('div');
+    toastEl.id = 'toast';
+    toastEl.className = 'toast font-mono';
+    toastEl.setAttribute('role', 'status');
+    toastEl.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toastEl);
+  }
+
+  toastEl.textContent = message;
+  toastEl.classList.add('show');
+
+  if (toastTimeout) clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    toastEl.classList.remove('show');
+  }, duration);
+}
+
+/**
+ * Theme Toggle & System Preference Sync with Scoped Transitions
  */
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   
-  const applyTheme = (theme) => {
+  const applyTheme = (theme, animate = false) => {
+    if (animate) {
+      document.body.classList.add('theme-transitioning');
+    }
+    
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -23,6 +53,12 @@ function initTheme() {
       localStorage.setItem('theme', 'light');
     }
     updateThemeIcon(theme);
+
+    if (animate) {
+      setTimeout(() => {
+        document.body.classList.remove('theme-transitioning');
+      }, 300);
+    }
   };
 
   const getActiveTheme = () => {
@@ -50,20 +86,103 @@ function initTheme() {
   };
 
   const initialTheme = getActiveTheme();
-  applyTheme(initialTheme);
+  applyTheme(initialTheme, false);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-      applyTheme(newTheme);
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      const newTheme = isCurrentlyDark ? 'light' : 'dark';
+      applyTheme(newTheme, true);
     });
   }
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
+      applyTheme(e.matches ? 'dark' : 'light', true);
     }
   });
+}
+
+/**
+ * One-Click Copy Email
+ */
+function initCopyEmail() {
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (!copyBtn) return;
+
+  const email = 'suyashs787@gmail.com';
+
+  copyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email)
+        .then(() => {
+          showToast(`✓ Email copied: ${email}`);
+        })
+        .catch(() => {
+          // Fallback to mailto link
+          window.location.href = `mailto:${email}`;
+        });
+    } else {
+      window.location.href = `mailto:${email}`;
+    }
+  });
+}
+
+/**
+ * Writing Research Abstract Dropdown & BibTeX Copy
+ */
+function initWritingAbstract() {
+  const writingCard = document.querySelector('.writing-card');
+  const toggleBtn = document.getElementById('writing-toggle');
+  const content = document.getElementById('writing-details');
+  const bibtexBtn = document.getElementById('copy-bibtex-btn');
+
+  if (toggleBtn && content && writingCard) {
+    const handleToggle = () => {
+      const isExpanded = writingCard.classList.contains('expanded');
+      if (isExpanded) {
+        writingCard.classList.remove('expanded');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        content.style.maxHeight = null;
+      } else {
+        writingCard.classList.add('expanded');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    };
+
+    toggleBtn.addEventListener('click', handleToggle);
+    toggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleToggle();
+      }
+    });
+  }
+
+  if (bibtexBtn) {
+    const bibtexCitation = `@inproceedings{singh2025senns,
+  author={Singh, Suyash and others},
+  booktitle={2025 International Conference on Distributed Computing and Data Science (ICDDS)},
+  title={Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning Frameworks for Deep Architectures},
+  year={2025},
+  publisher={IEEE}
+}`;
+
+    bibtexBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(bibtexCitation)
+          .then(() => {
+            showToast('✓ BibTeX citation copied to clipboard!');
+          })
+          .catch(() => {
+            showToast('✓ BibTeX citation ready to copy.');
+          });
+      }
+    });
+  }
 }
 
 /**
@@ -116,14 +235,14 @@ function initScrollSpy() {
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
-      if (!href || !href.startsWith('#')) return; // Allow normal opening for resume.pdf or external links
+      if (!href || !href.startsWith('#')) return;
 
       e.preventDefault();
       const targetId = href.substring(1);
       const targetSection = document.getElementById(targetId);
       
       if (targetSection) {
-        const offset = 80; // height of fixed nav
+        const offset = 80;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = targetSection.getBoundingClientRect().top;
         const offsetPosition = (elementRect - bodyRect) - offset;
@@ -138,7 +257,7 @@ function initScrollSpy() {
 
   window.addEventListener('scroll', () => {
     let currentActive = '';
-    const scrollPos = window.scrollY + 120; // active trigger point
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -226,7 +345,6 @@ function initMobileMenu() {
     btn.setAttribute('aria-expanded', isOpen.toString());
   });
 
-  // Close menu when a mobile link is clicked
   mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -256,8 +374,8 @@ function initVisitorCounter() {
   const counterEl = document.getElementById('visitor-count');
   if (!counterEl) return;
 
-  const BASE_OFFSET = 184; // Starts count at 187 (184 + current API value 3)
-  const defaultCount = BASE_OFFSET + 3; // 187
+  const BASE_OFFSET = 184;
+  const defaultCount = BASE_OFFSET + 3;
   const cached = localStorage.getItem('cached_visitor_count');
   let startValue = defaultCount;
 
@@ -267,7 +385,6 @@ function initVisitorCounter() {
     counterEl.textContent = startValue.toLocaleString();
   }
 
-  // Deduplicate counts per session so page reloads don't artificially spike numbers
   const hasVisited = sessionStorage.getItem('portfolio_session_visited');
   const action = hasVisited ? 'view' : 'up';
   const url = `https://counterapi.com/api/suyash-singh-portfolio/${action}/visits`;
@@ -302,7 +419,6 @@ function animateCount(element, start, end, duration = 800) {
   const step = (now) => {
     const elapsed = now - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    // Ease-out cubic
     const easeOut = 1 - Math.pow(1 - progress, 3);
     const current = Math.floor(start + (end - start) * easeOut);
     element.textContent = current.toLocaleString();
@@ -316,11 +432,20 @@ function animateCount(element, start, end, duration = 800) {
 }
 
 /**
- * Real-Time GitHub Contributions Fetcher
+ * Real-Time GitHub Contributions Fetcher with Session Caching
  */
 function initGithubContributions() {
   const svg = document.getElementById('github-heatmap-svg');
   if (!svg) return;
+
+  const cachedHtml = sessionStorage.getItem('github_contrib_svg_html');
+  const cachedTotal = sessionStorage.getItem('github_contrib_total');
+
+  if (cachedHtml && cachedTotal) {
+    svg.innerHTML = cachedHtml;
+    const totalEl = document.getElementById('github-contrib-text');
+    if (totalEl) totalEl.textContent = cachedTotal;
+  }
 
   const url = 'https://github-contributions-api.jogruber.de/v4/anothercodingguy?y=last';
 
@@ -332,9 +457,10 @@ function initGithubContributions() {
     .then(data => {
       if (data && Array.isArray(data.contributions) && data.contributions.length > 0) {
         const total = data.total && typeof data.total.lastYear === 'number' ? data.total.lastYear : 1056;
+        const totalText = `${total} contributions in the last year`;
         const totalEl = document.getElementById('github-contrib-text');
         if (totalEl) {
-          totalEl.textContent = `${total} contributions in the last year`;
+          totalEl.textContent = totalText;
         }
 
         const days = data.contributions;
@@ -372,12 +498,11 @@ function initGithubContributions() {
         });
 
         svg.innerHTML = rectsHtml;
+        sessionStorage.setItem('github_contrib_svg_html', rectsHtml);
+        sessionStorage.setItem('github_contrib_total', totalText);
       }
     })
     .catch(err => {
-      // Soft catch: pre-rendered static SVG already displays immediately
       console.warn('Live GitHub contribution fetch:', err);
     });
 }
-
-
