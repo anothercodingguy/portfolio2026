@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://anothercodingguy.github.io/portfolio2026/og-image.png">
   <meta name="twitter:image:alt" content="Suyash Singh — AI Researcher & Software Engineer">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⚡</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2274%22 font-size=%2272%22 text-anchor=%22middle%22 fill=%22%23fafafa%22 font-family=%22Georgia,serif%22 font-style=%22italic%22>S</text></svg>">
   
   <!-- Zero-FOUC Theme Init Script -->
   <script>
@@ -43,7 +43,10 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="index.css?v=6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="index.css?v=7">
 
   <script type="application/ld+json">
   {
@@ -91,6 +94,7 @@
   </script>
 </head>
 <body>
+  <a href="#intro" class="skip-link font-mono">Skip to content</a>
 
   <!-- Top Fixed Navigation -->
   <nav class="top-nav">
@@ -239,7 +243,7 @@
           <!-- Category 1: Languages -->
           <div class="skill-category-card border-dashed">
             <div class="skill-category-header">
-              <span class="category-icon">⚡</span>
+              <span class="category-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
               <span class="category-title font-mono">LANGUAGES</span>
             </div>
             <div class="skills-tag-cloud font-mono">
@@ -254,7 +258,7 @@
           <!-- Category 2: AI & ML Systems -->
           <div class="skill-category-card border-dashed">
             <div class="skill-category-header">
-              <span class="category-icon">🧠</span>
+              <span class="category-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M12 11l-6 6M12 11l6 6"/></svg></span>
               <span class="category-title font-mono">AI & ML SYSTEMS</span>
             </div>
             <div class="skills-tag-cloud font-mono">
@@ -269,7 +273,7 @@
           <!-- Category 3: Backend & Infrastructure -->
           <div class="skill-category-card border-dashed">
             <div class="skill-category-header">
-              <span class="category-icon">🛠️</span>
+              <span class="category-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><line x1="6" y1="6.5" x2="6.01" y2="6.5"/><line x1="6" y1="17.5" x2="6.01" y2="17.5"/></svg></span>
               <span class="category-title font-mono">BACKEND & INFRA</span>
             </div>
             <div class="skills-tag-cloud font-mono">
@@ -308,7 +312,7 @@
               <div class="job-date font-mono text-muted">sept 2026 – present</div>
             </button>
             <div class="accordion-content">
-              <div class="experience-list font-mono">
+              <div class="experience-list">
                 <div class="experience-bullet">Build backend services for a live AI product used by B2B sales teams, including event-driven pipelines that keep autonomous demo sessions in sync in real time.</div>
                 <div class="experience-bullet">Traced errors and latency through telemetry and event data with Python and SQL. The fixes that came out of it cut response latency by 35%.</div>
               </div>
@@ -330,7 +334,7 @@
               <div class="job-date font-mono text-muted">dec 2025 – may 2026</div>
             </button>
             <div class="accordion-content">
-              <div class="experience-list font-mono">
+              <div class="experience-list">
                 <div class="experience-bullet">Evaluated and ranked LLM responses for reasoning and correctness, producing RLHF-style preference data and benchmark sets used to train and test large models.</div>
                 <div class="experience-bullet">Broke down model failures like hallucinations, reasoning errors and unsafe tool use, and documented the recurring patterns for the research team.</div>
               </div>
@@ -363,7 +367,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">PathFlow</h3>
               </div>
-              <p class="project-desc font-mono text-muted">Tracing and debugging for AI agents. A Python SDK turns every agent step into an OpenTelemetry-style span, and the dashboard flags tool loops, retry storms and timeouts.</p>
+              <p class="project-desc text-muted">Tracing and debugging for AI agents. A Python SDK turns every agent step into an OpenTelemetry-style span, and the dashboard flags tool loops, retry storms and timeouts.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">Next.js</span>
@@ -396,7 +400,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">Job Match Agent</h3>
               </div>
-              <p class="project-desc font-mono text-muted">Paste a resume and get jobs ranked from a live index of 800+ real listings. Vector search picks candidates and an LLM reranks them with reasons, which took precision@5 from 0.54 to 0.73 in one run of my 20-case eval. A tool-calling agent with memory refines the list by chat.</p>
+              <p class="project-desc text-muted">Paste a resume and get jobs ranked from a live index of 800+ real listings. Vector search picks candidates and an LLM reranks them with reasons, which took precision@5 from 0.54 to 0.73 in one run of my 20-case eval. A tool-calling agent with memory refines the list by chat.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">FastAPI</span>
@@ -429,7 +433,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">Semantic LLM Gateway</h3>
               </div>
-              <p class="project-desc font-mono text-muted">LLM gateway that trims long context before the call, answers repeat questions from a Qdrant semantic cache, and routes each prompt to a small or large model.</p>
+              <p class="project-desc text-muted">LLM gateway that trims long context before the call, answers repeat questions from a Qdrant semantic cache, and routes each prompt to a small or large model.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">Python</span>
@@ -462,7 +466,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">Vidhived.ai</h3>
               </div>
-              <p class="project-desc font-mono text-muted">Upload a contract and every clause gets a risk score and a plain-English explanation. Llama 3.3 runs in JSON mode with retries and a fallback model, and clauses are analysed in parallel.</p>
+              <p class="project-desc text-muted">Upload a contract and every clause gets a risk score and a plain-English explanation. Llama 3.3 runs in JSON mode with retries and a fallback model, and clauses are analysed in parallel.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">Flask</span>
@@ -485,9 +489,13 @@
           <div class="project-card border-dashed">
             <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11344675" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="Read SENNs IEEE research paper">
               <div class="project-banner-preview">
-                <img src="senns_preview.jpg" alt="SENNs Machine Unlearning Research UI Preview" class="project-preview-img" loading="lazy">
+                <div class="project-cover cover-paper" aria-hidden="true">
+                  <span class="cover-title font-serif">Self-Erasing Neural Networks</span>
+                  <span class="cover-sub text-serif-italic">A neurogenesis-inspired framework for GDPR-compliant machine unlearning</span>
+                  <span class="cover-nodes"><i></i><i></i><i class="erased"></i><i></i><i></i><i class="erased"></i><i class="erased"></i><i></i><i></i><i></i><i class="erased"></i><i></i></span>
+                </div>
                 <div class="project-banner-overlay">
-                  <span class="banner-tag">📄 IEEE Paper</span>
+                  <span class="banner-tag">IEEE Paper</span>
                 </div>
               </div>
             </a>
@@ -496,7 +504,7 @@
                 <h3 class="project-title">SENNs (Unlearning)</h3>
                 <span class="project-badge font-mono border-dashed"><span class="badge-dot"></span>ICDDS 2025</span>
               </div>
-              <p class="project-desc font-mono text-muted">Co-authored IEEE paper on making trained networks forget specific data without full retraining, for GDPR-style deletion requests. Cuts unlearning time by over 50%.</p>
+              <p class="project-desc text-muted">Co-authored IEEE paper on making trained networks forget specific data without full retraining, for GDPR-style deletion requests. Cuts unlearning time by over 50%.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">PyTorch</span>
@@ -515,9 +523,18 @@
           <div class="project-card border-dashed">
             <a href="https://github.com/anothercodingguy/the-watcher" target="_blank" rel="noopener noreferrer" class="project-banner-link" aria-label="View The Watcher repository">
               <div class="project-banner-preview">
-                <img src="the_watcher_preview.jpg" alt="The Watcher AIOps Observability Pipeline Dashboard" class="project-preview-img" loading="lazy">
+                <div class="project-cover cover-diagram" aria-hidden="true">
+                  <div class="cover-flow font-mono">
+                    <span class="cover-node">edge poller</span>
+                    <span class="cover-arrow">&rarr;</span>
+                    <span class="cover-node">ONNX health score</span>
+                    <span class="cover-arrow">&rarr;</span>
+                    <span class="cover-node">restart or scale</span>
+                  </div>
+                  <span class="cover-caption font-mono">Architecture sketch</span>
+                </div>
                 <div class="project-banner-overlay">
-                  <span class="banner-tag">🛡️ AIOps</span>
+                  <span class="banner-tag">AIOps</span>
                 </div>
               </div>
             </a>
@@ -525,7 +542,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">The Watcher</h3>
               </div>
-              <p class="project-desc font-mono text-muted">Three-person team project. An edge poller scores service health with a small ONNX model and is built to restart or scale services on Kubernetes. I built the visualizer, the forecaster and the Render deployment.</p>
+              <p class="project-desc text-muted">Three-person team project. An edge poller scores service health with a small ONNX model and is built to restart or scale services on Kubernetes. I built the visualizer, the forecaster and the Render deployment.</p>
               <div class="project-footer">
                 <div class="tech-stack-tags font-mono">
                   <span class="tech-tag border-dashed">FastAPI</span>
@@ -728,6 +745,6 @@
   <!-- Toast Notification Container -->
   <div id="toast" class="toast font-mono" role="status" aria-live="polite"></div>
 
-  <script src="index.js?v=6"></script>
+  <script src="index.js?v=7"></script>
 </body>
 </html>

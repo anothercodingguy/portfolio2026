@@ -35,22 +35,30 @@ function showToast(message, duration = 2800) {
 }
 
 /**
+ * Smooth scrolling, unless the visitor asked their system to reduce motion.
+ */
+function scrollBehavior() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+}
+
+/**
  * Theme Toggle & System Preference Sync with Scoped Transitions
  */
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   
-  const applyTheme = (theme, animate = false) => {
+  const applyTheme = (theme, animate = false, remember = false) => {
     if (animate) {
       document.body.classList.add('theme-transitioning');
     }
     
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+    }
+    if (remember) {
+      try { localStorage.setItem('theme', theme); } catch (e) {}
     }
     updateThemeIcon(theme);
 
@@ -92,7 +100,7 @@ function initTheme() {
     themeToggleBtn.addEventListener('click', () => {
       const isCurrentlyDark = document.documentElement.classList.contains('dark');
       const newTheme = isCurrentlyDark ? 'light' : 'dark';
-      applyTheme(newTheme, true);
+      applyTheme(newTheme, true, true);
     });
   }
 
@@ -249,7 +257,7 @@ function initScrollSpy() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: scrollBehavior()
         });
       }
     });
@@ -360,7 +368,7 @@ function initMobileMenu() {
           const bodyRect = document.body.getBoundingClientRect().top;
           const elementRect = targetSection.getBoundingClientRect().top;
           const offsetPosition = (elementRect - bodyRect) - offset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          window.scrollTo({ top: offsetPosition, behavior: scrollBehavior() });
         }
       }
     });

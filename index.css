@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -593,7 +591,8 @@ body::before {
 }
 
 .category-icon {
-  font-size: 1rem;
+  display: inline-flex;
+  color: var(--muted);
 }
 
 .category-title {
@@ -739,6 +738,9 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .experience-bullet {
@@ -898,7 +900,7 @@ body::before {
 }
 
 .project-badge {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   padding: 2px 6px;
   border-radius: 4px;
   color: var(--muted);
@@ -915,8 +917,9 @@ body::before {
 }
 
 .project-desc {
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.55;
   margin-bottom: 12px;
   flex: 1;
 }
@@ -1474,4 +1477,147 @@ footer {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* Covers for projects that have no real screenshot.
+   Drawn in HTML/CSS so they follow the theme and cannot be mistaken for a product UI. */
+.project-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 44px 20px 18px;
+  color: var(--foreground);
+  background-color: var(--muted-light);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cover-title {
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.cover-sub {
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--muted);
+  max-width: 30ch;
+}
+
+/* A row of units, some of them erased: the idea of the paper, not data from it. */
+.cover-nodes {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: flex;
+  gap: 5px;
+}
+
+.cover-nodes i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--foreground);
+  opacity: 0.75;
+}
+
+.cover-nodes i.erased {
+  background-color: transparent;
+  border: 1px dashed var(--muted);
+  opacity: 1;
+}
+
+.cover-diagram {
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding-top: 40px;
+}
+
+.cover-flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.cover-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1 1 0;
+  max-width: 108px;
+  padding: 10px 8px;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  border: 1px dashed var(--muted);
+  border-radius: 8px;
+  background-color: var(--background);
+}
+
+.cover-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cover-caption {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Keyboard focus: one visible ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* These sit inside clipped cards, so the ring is drawn inside the edge */
+.project-banner-link:focus-visible,
+.accordion-header:focus-visible,
+.writing-header-clickable:focus-visible {
+  outline-offset: -3px;
+  border-radius: 10px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: var(--foreground);
+  color: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* Respect the "reduce motion" system setting */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
