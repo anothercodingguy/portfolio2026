@@ -162,10 +162,10 @@ function initWritingAbstract() {
   }
 
   if (bibtexBtn) {
-    const bibtexCitation = `@inproceedings{singh2025senns,
-  author={Singh, Suyash and others},
+    const bibtexCitation = `@inproceedings{gupta2025senns,
+  author={Gupta, Anant and Singh, Suyash and Rawat, Aditya and Bhatnagar, Shaleen},
   booktitle={2025 International Conference on Distributed Computing and Data Science (ICDDS)},
-  title={Self-Erasing Neural Networks (SENNs): GDPR-Compliant Unlearning Frameworks for Deep Architectures},
+  title={Self-Erasing Neural Networks (SENNs): A Neurogenesis-Inspired Framework for GDPR-Compliant Machine Unlearning},
   year={2025},
   publisher={IEEE}
 }`;
